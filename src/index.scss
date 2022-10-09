@@ -102,8 +102,27 @@ svg {
   background-color: $gray-background-color;
 }
 
+.title {
+  font-weight: 600;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
 .container {
   max-width: 1330px;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+.btn {
+  padding: 13px 32px;
+  border-radius: 6px;
+  color: $white-color;
+  background-color: $primary-color;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
 }
