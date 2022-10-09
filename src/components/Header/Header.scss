@@ -1,0 +1,36 @@
+@import '../../variables.scss';
+
+.header {
+    padding: 16px 0;
+    margin-bottom: 30px;
+    background-color: $white-color;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo {
+        display: flex;
+        align-items: center;
+        & img {
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
+        }
+        & h1 {
+            font-size: 18px;
+            font-weight: 400;
+        }
+    }
+    &__cart {
+        display: flex;
+        align-items: center;
+        color: $white-color;
+        background-color: $primary-color;
+        padding: 8px 16px;
+        border-radius: 4px;
+        & img {
+            margin-right: 8px;
+        }
+    }
+}

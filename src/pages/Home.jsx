@@ -1,6 +1,14 @@
+import Categories from "../components/Categories/Categories";
+
 function Home() {
     return (
-        <h1>Homepage</h1>
+        <section className="homepage">
+            <div className="container">
+                <div className="homepage__inner">
+                    <Categories />
+                </div>
+            </div>
+        </section>
     )
 }
 

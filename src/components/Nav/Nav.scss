@@ -1,0 +1,20 @@
+@import '../../variables.scss';
+
+.nav {
+    &__list {
+        display: flex;
+    }
+    &__item {
+        font-size: 16px;
+    }
+    &__item:not(:last-child) {
+        margin-right: 32px;
+    }
+    &__link {
+        padding-bottom: 5px;
+        transition: border-bottom 0.1s ease-in-out;
+        &:hover {
+            border-bottom: 3px solid $black-color;
+        }
+    }
+}
