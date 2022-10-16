@@ -1,15 +1,13 @@
 import { useContext } from "react";
-import Categories from "../components/Categories/Categories";
 import Card from "../components/Card/Card";
 import { AnywherePizzaContext } from "../context";
 
-function Home() {
-    const { pizza, onCartAdded } = useContext(AnywherePizzaContext);
+function PizzaPage() {
+    const { pizza } = useContext(AnywherePizzaContext);
     return (
         <section className="homepage">
             <div className="container">
                 <div className="homepage__inner">
-                    <Categories />
                     <>
                         <h2 className="title">Піца</h2>
                         <div className="catalog">
@@ -17,7 +15,6 @@ function Home() {
                                 return (
                                     <Card 
                                         key= {item.id}
-                                        onCartAdded={onCartAdded}
                                         {...item} 
                                     />
                                 )
@@ -30,4 +27,4 @@ function Home() {
     )
 }
 
-export default Home;
+export default PizzaPage;

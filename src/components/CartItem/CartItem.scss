@@ -1,0 +1,53 @@
+@import '../../variables.scss';
+
+.cart-item {
+    max-width: 380px;
+    border: 1px solid $gray-line-color;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    &__img {
+        width: 95px;
+        height: 95px;
+    }
+    &__content {
+        width: 240px;
+    }
+    &__title {
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    &__quanity {
+        display: flex;
+        align-items: center;
+        padding: 14px 8px;
+        border-radius: 6px;
+        background-color: $primary-light-color;
+    }
+    &__amount {
+        font-size: 16px;
+        color: $primary-color;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__btn {
+        font-size: 18px;
+        color: $primary-color;
+    }
+    &__price {
+        font-weight: 600;
+        font-size: 16px;
+        color: $primary-color;
+    }
+}

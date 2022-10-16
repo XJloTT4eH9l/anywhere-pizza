@@ -1,9 +1,17 @@
 import './Header.scss';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AnywherePizzaContext } from '../../context';
 
 import Nav from '../Nav/Nav';
 
 function Header() {
+    const { getCartSummary, setIsCartOpen } = useContext(AnywherePizzaContext);
+
+    function openCart() {
+        setIsCartOpen(true);
+    }
+
     return(
         <header className="header">
             <div className="container">
@@ -13,9 +21,9 @@ function Header() {
                         <h1>Куди піца</h1>
                     </Link>
                     <Nav />
-                    <button className='header__cart'>
+                    <button className='header__cart' onClick={openCart}>
                         <img src='img/cart.svg' alt='Корзина' />
-                        <span>0 грн</span>
+                        <span>{getCartSummary()} грн</span>
                     </button>
                 </div>
             </div>
