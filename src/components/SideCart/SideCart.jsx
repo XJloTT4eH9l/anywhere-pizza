@@ -46,8 +46,8 @@ function SideCart() {
                     </div>
                 </div>
                 <div className="side-cart__bottom">
-                    <span className='side-cart__price'>Итого: {getCartSummary()} грн</span>
-                    <button className='side-cart__button'>Оформить заказ</button>
+                    <span className='side-cart__price'>Разом: {getCartSummary()} грн</span>
+                    <button className='side-cart__button'>Оформити замовлення</button>
                 </div>
             </aside>
         </div>

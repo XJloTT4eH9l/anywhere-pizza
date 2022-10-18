@@ -1,5 +1,7 @@
 import './Categories.scss';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import {AnywherePizzaContext} from '../../context.js';
 
 function Categories() {
     return (
@@ -16,8 +18,9 @@ function Categories() {
 }
 
 function CategoriesItem({imgSrc, title, link}) {
+    const { setDisplayNav } = useContext(AnywherePizzaContext);
     return (
-            <Link className='categories__item' to={link}>
+            <Link className='categories__item' to={link} onClick={() => setDisplayNav(true)}>
                 <img src={imgSrc} alt={title} />
                 <h2 className="categories__title">{title}</h2>
             </Link>

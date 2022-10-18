@@ -1,0 +1,66 @@
+@import '../../variables.scss';
+
+.filter {
+    position: relative;
+    max-width: 250px;
+    &--active {
+        position: static;
+    }
+    &__button {
+        display: flex;
+        padding: 9px 16px;
+        font-size: 16px;
+        background-color: $white-color;
+        border: 1px solid $gray-line-color;
+        border-radius: 6px;
+        transition: transform 0.3s ease-in-out;
+        &--active {
+            transform: translateY(-10px);
+        }
+        &:hover .filter__img {
+            fill: $primary-color;
+        }
+    }
+    &__img {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        transition: fill 0.3s linear;
+        &--active {
+            fill: $primary-color;
+        }
+    }
+    &__list {
+        position: absolute;
+        width: 100%;
+        bottom: -130px;
+        left: -25px;
+        display: none;
+        background-color: $white-color;
+        border-radius: 6px;
+        opacity: 0;
+        transition: opacity 0.3s linear;
+        &--active {
+            display: block;
+            max-width: 300px;
+            z-index: 10;
+            opacity: 1;
+        }
+    }
+    &__item {
+        cursor: pointer;
+        width: 200px;
+        padding: 5px;
+        font-size: 16px;
+        border-bottom: 1px solid $gray-line-color;
+        background-color: inherit;
+        transition: background-color 0.3s linear;
+        border-radius: 6px;
+        &:last-child {
+            border-bottom: none;
+        }
+        &:hover {
+            background-color: $gray-text-color;
+        }
+    }
+}

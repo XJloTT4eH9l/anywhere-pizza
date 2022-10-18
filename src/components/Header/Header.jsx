@@ -6,7 +6,7 @@ import { AnywherePizzaContext } from '../../context';
 import Nav from '../Nav/Nav';
 
 function Header() {
-    const { getCartSummary, setIsCartOpen } = useContext(AnywherePizzaContext);
+    const { getCartSummary, setIsCartOpen, displayNav, setDisplayNav } = useContext(AnywherePizzaContext);
 
     function openCart() {
         setIsCartOpen(true);
@@ -16,11 +16,11 @@ function Header() {
         <header className="header">
             <div className="container">
                 <div className="header__inner">
-                    <Link to='/' className='header__logo'>
+                    <Link to='/' className='header__logo' onClick={() => setDisplayNav(false)}>
                         <img src='img/logo.png' alt='Лого' />
                         <h1>Куди піца</h1>
                     </Link>
-                    <Nav />
+                    {displayNav && <Nav />}
                     <button className='header__cart' onClick={openCart}>
                         <img src='img/cart.svg' alt='Корзина' />
                         <span>{getCartSummary()} грн</span>

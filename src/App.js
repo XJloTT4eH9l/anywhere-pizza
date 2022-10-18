@@ -19,6 +19,8 @@ function App() {
   const [cartItems, setCartItems] = useState(JSON.parse(window.localStorage.getItem('cartItems')));
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [force, setForce] = useState(1);
+  const [displayNav, setDisplayNav] = useState(false);
+  const [sortTitle, setSortTitle] = useState('title');
 
   useEffect(() => {
     async function getProducts() {
@@ -71,7 +73,7 @@ function App() {
     setForce(force + 1);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
     console.log(obj); 
-    }
+  }
 
   function onClickMinus(id) {
     const obj = cartItems.find(item => item.id === id);
@@ -84,7 +86,23 @@ function App() {
 
     setForce(force + 1);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }
+
+  function sortProducts(array) {
+    const copy = array.slice();
+
+    switch(sortTitle) {
+      case 'title': 
+        return copy.sort((a, b) => a.title > b.title ? 1 : -1);
+      case 'price-low':
+        return copy.sort((a, b) => a.price > b.price ? 1 : -1);
+      case 'price-top':
+        return copy.sort((a, b) => b.price > a.price ? 1 : -1);
+      default: 
+        return array;
     }
+
+  }
  
   // const products = [
   //   {"id": 1,
@@ -206,7 +224,11 @@ function App() {
         onCartAdded,
         onClickPlus,
         onClickMinus,
-        getCartSummary
+        getCartSummary,
+        displayNav,
+        setDisplayNav,
+        setSortTitle,
+        sortProducts
       } 
     }>
       <div className='app'>

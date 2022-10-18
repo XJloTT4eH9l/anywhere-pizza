@@ -5,6 +5,13 @@
     grid-template-columns: repeat(7, 1fr);
     gap: 30px;
     margin-bottom: 30px;
+    @media(max-width: 1250px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    @media(max-width: 991px) {
+        grid-template-columns: repeat(7, 1fr);
+        overflow-x: scroll;
+    }
     &__item {
         padding: 20px 40px;
         background-color: $white-color;
