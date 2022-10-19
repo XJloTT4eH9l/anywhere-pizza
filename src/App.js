@@ -7,6 +7,7 @@ import axios from 'axios';
 import Home from './pages/Home';
 import PizzaPage from './pages/PizzaPage';
 import SushiPage from './pages/SushiPage';
+import DrinksPage from './pages/DrinksPage';
 
 //components
 import Header from './components/Header/Header';
@@ -16,6 +17,7 @@ function App() {
 
   const [pizza, setPizza] = useState([]);
   const [sushi, setSushi] = useState([]);
+  const [drinks, setDrinks] = useState([]);
   const [cartItems, setCartItems] = useState(JSON.parse(window.localStorage.getItem('cartItems')));
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [force, setForce] = useState(1);
@@ -30,7 +32,7 @@ function App() {
     {name: 'Закуски', href: '/snacks', title: 'snacks', imgSrc:'img/snacks-icon.png'},
     {name: 'Комбо', href: '/kombo', title: 'kombo', imgSrc:'img/combo-icon.png'},
     {name: 'Десерти', href: '/desserts', title: 'desserts', imgSrc:'img/desserts-icon.png'},
-    {name: 'Соуси', href: '/sauces', title: 'sauces', imgSrc:'img/sauces-icon.png'},
+    {name: 'Соуси', href: '/sauces', title: 'sauces', imgSrc:'img/sauces-icon.png'}
   ];
 
   useEffect(() => {
@@ -38,9 +40,11 @@ function App() {
       const productsResponce = await axios.get('https://631ae489dc236c0b1ee6bc11.mockapi.io/products');
       const pizzaResp = productsResponce.data[0].pizza;
       const sushiResp = productsResponce.data[1].sushi;
+      const drinksResp = productsResponce.data[2].drinks;
 
       setPizza(pizzaResp);
       setSushi(sushiResp);
+      setDrinks(drinksResp);
     }
     getProducts();
 
@@ -220,6 +224,47 @@ function App() {
   //       "price": 250
   //       }
   //     ]
+  //   },
+  //   {
+  //     "id": 3,
+  //     "drinks": [
+  //       {"id": 17,
+  //         "imgUrl": "img/pepsi-default.png",
+  //         "title": "Pepsi",
+  //         "compound": "Об'єм: 0.33л",
+  //         "price": 16
+  //       },
+  //       {"id": 18,
+  //         "imgUrl": "img/coke.png",
+  //         "title": "Coca-cola",
+  //         "compound": "Об'єм: 0.33л",
+  //         "price": 18
+  //       },
+  //       {"id": 19,
+  //         "imgUrl": "img/mirinda.png",
+  //         "title": "Mirinda",
+  //         "compound": "Об'єм: 0.33л",
+  //         "price": 15
+  //       },
+  //       {"id": 20,
+  //         "imgUrl": "img/fanta.png",
+  //         "title": "Fanta",
+  //         "compound": "Об'єм: 0.33л",
+  //         "price": 18
+  //       },
+  //       {"id": 21,
+  //         "imgUrl": "img/morshynska-still.png",
+  //         "title": "Вода негазована Моршинська",
+  //         "compound": "Об'єм: 0.5л",
+  //         "price": 13
+  //       },
+  //       {"id": 22,
+  //         "imgUrl": "img/morshynska-carbonated.png",
+  //         "title": "Вода слабогазована Моршинська",
+  //         "compound": "Об'єм: 0.5л",
+  //         "price": 15
+  //       }
+  //     ]
   //   }
   // ];
   
@@ -228,6 +273,7 @@ function App() {
       {
         pizza,
         sushi,
+        drinks,
         isCartOpen,
         setIsCartOpen,
         cartItems,
@@ -253,6 +299,7 @@ function App() {
           <Route path='/' element={ <Home /> }></Route>
           <Route path='/pizza' element={ <PizzaPage /> }></Route>
           <Route path='/sushi' element={ <SushiPage /> }></Route>
+          <Route path='/drinks' element={ <DrinksPage />}></Route>
         </Routes>
       </div>
     </AnywherePizzaContext.Provider>

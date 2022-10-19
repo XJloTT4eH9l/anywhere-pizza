@@ -18,7 +18,7 @@ function Card({id, imgUrl, title, compound, price}) {
             </div>
             <div className='card__pick'>
                 <button className="btn" onClick={onCart}>Додати</button>
-                <span className="card__price">від {price} грн</span>
+                <span className="card__price">{price} грн</span>
             </div>
         </div>
     )
