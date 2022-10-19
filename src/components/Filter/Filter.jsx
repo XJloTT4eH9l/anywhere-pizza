@@ -4,7 +4,7 @@ import { useState, useContext } from 'react';
 import { AnywherePizzaContext } from '../../context';
 
 function Filter() {
-    const { setSortTitle, isCartOpen } = useContext(AnywherePizzaContext);
+    const { sortTitle, setSortTitle, isCartOpen } = useContext(AnywherePizzaContext);
     const [isFilterOpen, setIsFilterOpen] = useState(false);
 
     const filters = [
@@ -22,8 +22,9 @@ function Filter() {
             </button>
             <ul className={isFilterOpen ? 'filter__list filter__list--active' : 'filter__list'}>
                 {filters.map(filter => {
+                    const isActive = sortTitle === filter.name;
                     return (
-                        <li className="filter__item"
+                        <li className={isActive ? 'filter__item filter__item--active' : 'filter__item'}
                             key={filter.name}
                             onClick={() => {
                             setSortTitle(filter.name);

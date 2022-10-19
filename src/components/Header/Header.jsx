@@ -18,7 +18,7 @@ function Header() {
                 <div className="header__inner">
                     <Link to='/' className='header__logo' onClick={() => setDisplayNav(false)}>
                         <img src='img/logo.png' alt='Лого' />
-                        <h1>Куди піца</h1>
+                        <h1>Anywhere Піцца</h1>
                     </Link>
                     {displayNav && <Nav />}
                     <button className='header__cart' onClick={openCart}>

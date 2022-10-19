@@ -13,6 +13,9 @@
     &__link {
         padding-bottom: 5px;
         transition: border-bottom 0.1s ease-in-out;
+        &--active {
+            border-bottom: 3px solid $black-color;
+        }
         &:hover {
             border-bottom: 3px solid $black-color;
         }

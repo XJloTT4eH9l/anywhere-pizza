@@ -2,12 +2,11 @@ import { useContext } from "react";
 
 import Categories from "../components/Categories/Categories";
 import Card from "../components/Card/Card";
-import Filter from "../components/Filter/Filter";
 
 import { AnywherePizzaContext } from "../context";
 
 function Home() {
-    const { pizza, onCartAdded, sortProducts } = useContext(AnywherePizzaContext);
+    const { pizza } = useContext(AnywherePizzaContext);
 
     return (
         <section className="homepage">
@@ -15,16 +14,12 @@ function Home() {
                 <div className="homepage__inner">
                     <Categories />
                     <>
-                        <div className="homepage__top">
-                            <h2 className="title">Піца</h2>
-                            <Filter />
-                        </div>
+                        <h2 className="title">Піца</h2>
                         <div className="catalog">
-                           {sortProducts(pizza).map(item => {
+                           {pizza.map(item => {
                                 return (
                                     <Card 
                                         key= {item.id}
-                                        onCartAdded={onCartAdded}
                                         {...item} 
                                     />
                                 )

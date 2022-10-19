@@ -56,11 +56,14 @@
         background-color: inherit;
         transition: background-color 0.3s linear;
         border-radius: 6px;
+        &--active {
+            background-color: $gray-text-color;
+        }
         &:last-child {
             border-bottom: none;
         }
         &:hover {
-            background-color: $gray-text-color;
+            background-color: $primary-color;
         }
     }
 }

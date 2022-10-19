@@ -98,6 +98,12 @@ svg {
   }
 }
 
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .app {
   background-color: $gray-background-color;
 }

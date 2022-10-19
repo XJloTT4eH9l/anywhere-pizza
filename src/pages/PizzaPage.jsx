@@ -1,17 +1,23 @@
 import { useContext } from "react";
+
 import Card from "../components/Card/Card";
+import Filter from "../components/Filter/Filter";
+
 import { AnywherePizzaContext } from "../context";
 
 function PizzaPage() {
-    const { pizza } = useContext(AnywherePizzaContext);
+    const { pizza, sortProducts } = useContext(AnywherePizzaContext);
     return (
         <section className="homepage">
             <div className="container">
                 <div className="homepage__inner">
                     <>
-                        <h2 className="title">Піца</h2>
+                    <div className="d-flex">
+                            <h2 className="title">Піца</h2>
+                            <Filter />
+                    </div>
                         <div className="catalog">
-                           {pizza.map(item => {
+                           {sortProducts(pizza).map(item => {
                                 return (
                                     <Card 
                                         key= {item.id}

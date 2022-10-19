@@ -21,6 +21,17 @@ function App() {
   const [force, setForce] = useState(1);
   const [displayNav, setDisplayNav] = useState(false);
   const [sortTitle, setSortTitle] = useState('title');
+  const [navLinkActive, setNavLinkActive] = useState('');
+
+  const navLinks = [
+    {name: 'Піца', href: '/pizza', title: 'pizza', imgSrc:'img/pizza-icon.png'},
+    {name: 'Суші', href: '/sushi', title: 'sushi', imgSrc:'img/sushi-icon.png'},
+    {name: 'Напої', href: '/drinks', title: 'drinks', imgSrc:'img/drinks-icon.png'},
+    {name: 'Закуски', href: '/snacks', title: 'snacks', imgSrc:'img/snacks-icon.png'},
+    {name: 'Комбо', href: '/kombo', title: 'kombo', imgSrc:'img/combo-icon.png'},
+    {name: 'Десерти', href: '/desserts', title: 'desserts', imgSrc:'img/desserts-icon.png'},
+    {name: 'Соуси', href: '/sauces', title: 'sauces', imgSrc:'img/sauces-icon.png'},
+  ];
 
   useEffect(() => {
     async function getProducts() {
@@ -225,10 +236,14 @@ function App() {
         onClickPlus,
         onClickMinus,
         getCartSummary,
+        navLinks,
         displayNav,
         setDisplayNav,
+        sortTitle,
         setSortTitle,
-        sortProducts
+        sortProducts,
+        navLinkActive,
+        setNavLinkActive
       } 
     }>
       <div className='app'>

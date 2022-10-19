@@ -1,17 +1,21 @@
 import { useContext } from "react";
 import Card from "../components/Card/Card";
+import Filter from "../components/Filter/Filter";
 import { AnywherePizzaContext } from "../context";
 
 function SushiPage() {
-    const { sushi } = useContext(AnywherePizzaContext);
+    const { sushi, sortProducts } = useContext(AnywherePizzaContext);
     return (
         <section className="homepage">
             <div className="container">
                 <div className="homepage__inner">
                     <>
-                        <h2 className="title">Суші</h2>
+                        <div className="d-flex">
+                            <h2 className="title">Суші</h2>
+                            <Filter />
+                        </div>
                         <div className="catalog">
-                           {sushi.map(item => {
+                           {sortProducts(sushi).map(item => {
                                 return (
                                     <Card 
                                         key= {item.id}
