@@ -16,7 +16,8 @@ function Categories() {
                         onClick={() => {
                             setDisplayNav(true)
                             setNavLinkActive(category.title)
-                    }}>
+                        }
+                    }>
                         <img src={category.imgSrc} alt={category.title}/>
                         <h2 className='categories__title'>{category.name}</h2>
                     </Link>

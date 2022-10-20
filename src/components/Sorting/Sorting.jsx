@@ -1,13 +1,13 @@
-import './Filter.scss';
+import './Sorting.scss';
 import SvgSpryte from '../SvgSpryte';
 import { useState, useContext } from 'react';
 import { AnywherePizzaContext } from '../../context';
 
-function Filter() {
+function Sorting() {
     const { sortTitle, setSortTitle, isCartOpen } = useContext(AnywherePizzaContext);
-    const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const [isSortOpen, setIsSortOpen] = useState(false);
 
-    const filters = [
+    const sortings = [
         {name: 'price-low', label: 'По ціні(від меншої до більшої)'},
         {name: 'price-top', label: 'По ціні(від більшої до меншої)'},
         {name: 'title', label: 'По назві'}
@@ -16,22 +16,22 @@ function Filter() {
     return (
         <div className={isCartOpen ? "filter--active" : "filter"}>
             <SvgSpryte />
-            <button className={isFilterOpen ? "filter__button filter__button--active" : "filter__button"} onClick={() => setIsFilterOpen(prev => !prev)}>
-                <svg className={isFilterOpen ? "filter__img filter__img--active" : "filter__img"}><use href='#filter'></use></svg>
-                Фільтри
+            <button className={isSortOpen ? "filter__button filter__button--active" : "filter__button"} onClick={() => setIsSortOpen(prev => !prev)}>
+                <svg className={isSortOpen ? "filter__img filter__img--active" : "filter__img"}><use href='#filter'></use></svg>
+                Сортування
             </button>
-            <ul className={isFilterOpen ? 'filter__list filter__list--active' : 'filter__list'}>
-                {filters.map(filter => {
-                    const isActive = sortTitle === filter.name;
+            <ul className={isSortOpen ? 'filter__list filter__list--active' : 'filter__list'}>
+                {sortings.map(sorting => {
+                    const isActive = sortTitle === sorting.name;
                     return (
                         <li className={isActive ? 'filter__item filter__item--active' : 'filter__item'}
-                            key={filter.name}
+                            key={sorting.name}
                             onClick={() => {
-                            setSortTitle(filter.name);
-                            setIsFilterOpen(false);
+                            setSortTitle(sorting.name);
+                            setIsSortOpen(false);
                             }}
                         >
-                            {filter.label}
+                            {sorting.label}
                         </li>
                     ) 
                 })}
@@ -40,4 +40,4 @@ function Filter() {
     )
 }
 
-export default Filter;
+export default Sorting;

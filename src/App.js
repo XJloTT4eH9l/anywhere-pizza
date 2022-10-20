@@ -9,6 +9,7 @@ import PizzaPage from './pages/PizzaPage';
 import SushiPage from './pages/SushiPage';
 import DrinksPage from './pages/DrinksPage';
 import SnacksPage from './pages/SnacksPage';
+import SaucesPage from './pages/SaucesPage';
 
 //components
 import Header from './components/Header/Header';
@@ -20,6 +21,7 @@ function App() {
   const [sushi, setSushi] = useState([]);
   const [drinks, setDrinks] = useState([]);
   const [snacks, setSnacks] = useState([]);
+  const [sauces, setSauces] = useState([]);
   const [cartItems, setCartItems] = useState(JSON.parse(window.localStorage.getItem('cartItems')));
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [force, setForce] = useState(1);
@@ -44,11 +46,13 @@ function App() {
       const sushiResp = productsResponce.data[1].sushi;
       const drinksResp = productsResponce.data[2].drinks;
       const snacksResp = productsResponce.data[3].snacks;
+      const saucesResp = productsResponce.data[4].sauces;
 
       setPizza(pizzaResp);
       setSushi(sushiResp);
       setDrinks(drinksResp);
       setSnacks(snacksResp);
+      setSauces(saucesResp);
     }
     getProducts();
 
@@ -298,6 +302,35 @@ function App() {
   //       "price": 180
   //       }
   //     ]
+  //   },
+  //   {
+  //     "id": 5,
+  //     "sauces": [
+  //       {"id": 26,
+  //        "imgUrl": "img/garlicky.png",
+  //        "title": "Часниковтй соус",
+  //        "compound": "Вага: 30гр",
+  //        "price": 29
+  //       },
+  //       {"id": 27,
+  //        "imgUrl": "img/ketchup.png",
+  //        "title": "Кетчуп",
+  //        "compound": "Вага: 30гр",
+  //        "price": 29
+  //       },
+  //       {"id": 28,
+  //        "imgUrl": "img/mayonnaise.png",
+  //        "title": "Майонез",
+  //        "compound": "Вага: 30гр",
+  //        "price": 29
+  //       },
+  //       {"id": 29,
+  //        "imgUrl": "img/mustard.png",
+  //        "title": "Гірчиця",
+  //        "compound": "Вага: 30гр",
+  //        "price": 29
+  //       }
+  //     ]
   //   }
   // ];
   
@@ -308,6 +341,7 @@ function App() {
         sushi,
         drinks,
         snacks,
+        sauces,
         isCartOpen,
         setIsCartOpen,
         cartItems,
@@ -335,6 +369,7 @@ function App() {
           <Route path='/sushi' element={ <SushiPage /> }></Route>
           <Route path='/drinks' element={ <DrinksPage />}></Route>
           <Route path='/snacks' element={ <SnacksPage />}></Route>
+          <Route path='/sauces' element={ <SaucesPage />}></Route>
         </Routes>
       </div>
     </AnywherePizzaContext.Provider>
