@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import PizzaPage from './pages/PizzaPage';
 import SushiPage from './pages/SushiPage';
 import DrinksPage from './pages/DrinksPage';
+import SnacksPage from './pages/SnacksPage';
 
 //components
 import Header from './components/Header/Header';
@@ -18,6 +19,7 @@ function App() {
   const [pizza, setPizza] = useState([]);
   const [sushi, setSushi] = useState([]);
   const [drinks, setDrinks] = useState([]);
+  const [snacks, setSnacks] = useState([]);
   const [cartItems, setCartItems] = useState(JSON.parse(window.localStorage.getItem('cartItems')));
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [force, setForce] = useState(1);
@@ -41,10 +43,12 @@ function App() {
       const pizzaResp = productsResponce.data[0].pizza;
       const sushiResp = productsResponce.data[1].sushi;
       const drinksResp = productsResponce.data[2].drinks;
+      const snacksResp = productsResponce.data[3].snacks;
 
       setPizza(pizzaResp);
       setSushi(sushiResp);
       setDrinks(drinksResp);
+      setSnacks(snacksResp);
     }
     getProducts();
 
@@ -265,6 +269,35 @@ function App() {
   //         "price": 15
   //       }
   //     ]
+  //   },
+  //   {
+  //     "id": 4,
+  //     "snacks": [
+  //       {"id": 23,
+  //       "imgUrl": "img/potato-fries.png",
+  //       "title": "Картопля фрі середня",
+  //       "compound": "Вага: 90гр",
+  //       "price": 50
+  //       },
+  //       {"id": 24,
+  //       "imgUrl": "img/shaurma.png",
+  //       "title": "Шаурма",
+  //       "compound": "Вага: 300гр",
+  //       "price": 75
+  //       },
+  //       {"id": 25,
+  //       "imgUrl": "img/chiken-legs.png",
+  //       "title": "Гострі ніжки",
+  //       "compound": "Вага: 400гр",
+  //       "price": 160
+  //       },
+  //       {"id": 26,
+  //       "imgUrl": "img/chiken-wings.png",
+  //       "title": "Смажені курячі крильця",
+  //       "compound": "Вага: 350гр",
+  //       "price": 180
+  //       }
+  //     ]
   //   }
   // ];
   
@@ -274,6 +307,7 @@ function App() {
         pizza,
         sushi,
         drinks,
+        snacks,
         isCartOpen,
         setIsCartOpen,
         cartItems,
@@ -300,6 +334,7 @@ function App() {
           <Route path='/pizza' element={ <PizzaPage /> }></Route>
           <Route path='/sushi' element={ <SushiPage /> }></Route>
           <Route path='/drinks' element={ <DrinksPage />}></Route>
+          <Route path='/snacks' element={ <SnacksPage />}></Route>
         </Routes>
       </div>
     </AnywherePizzaContext.Provider>
