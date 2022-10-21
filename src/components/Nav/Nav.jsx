@@ -4,21 +4,22 @@ import { Link } from 'react-router-dom';
 import {AnywherePizzaContext} from '../../context.js';
 
 
-function Nav() {
-    const { setDisplayNav, navLinkActive, setNavLinkActive, navLinks } = useContext(AnywherePizzaContext);
+function Nav({ navType, flexType }) {
+    const { setDisplayNav, navLinkActive, setNavLinkActive, navLinks, setIsMobileMenuOpen } = useContext(AnywherePizzaContext);
 
     return (
-        <nav className="nav">
-            <ul className="nav__list">
+        <nav className={navType}>
+            <ul className={navType + flexType}>
                 {navLinks.map(link => {
                     const isActive = navLinkActive === link.title;
                     return (
-                        <li className="nav__item" key={link.name}>
+                        <li className={`${navType}__item`} key={link.name}>
                             <Link
-                                className={isActive ? 'nav__link nav__link--active' : 'nav__link'}
+                                className={isActive ? `${navType}__link ${navType}__link--active` : `${navType}__link`}
                                 onClick={() => {
                                     setDisplayNav(true);
                                     setNavLinkActive(link.title);
+                                    setIsMobileMenuOpen(false);
                                 }}
                                 to={link.href}>
                                 {link.name}

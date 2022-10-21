@@ -1,9 +1,14 @@
 @import '../../variables.scss';
 
 .header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
     padding: 16px 0;
     margin-bottom: 30px;
     background-color: $white-color;
+    z-index: 10;
     &__inner {
         display: flex;
         justify-content: space-between;
@@ -20,6 +25,9 @@
         & h1 {
             font-size: 18px;
             font-weight: 400;
+            @media(max-width: 600px) {
+                font-size: 0;
+            }
         }
     }
     &__cart {

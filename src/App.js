@@ -10,6 +10,7 @@ import SushiPage from './pages/SushiPage';
 import DrinksPage from './pages/DrinksPage';
 import SnacksPage from './pages/SnacksPage';
 import SaucesPage from './pages/SaucesPage';
+import DessertsPage from './pages/DessertsPage';
 
 //components
 import Header from './components/Header/Header';
@@ -22,7 +23,9 @@ function App() {
   const [drinks, setDrinks] = useState([]);
   const [snacks, setSnacks] = useState([]);
   const [sauces, setSauces] = useState([]);
+  const [desserts, setDesserts] = useState([]);
   const [cartItems, setCartItems] = useState(JSON.parse(window.localStorage.getItem('cartItems')));
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [force, setForce] = useState(1);
   const [displayNav, setDisplayNav] = useState(false);
@@ -34,7 +37,6 @@ function App() {
     {name: 'Суші', href: '/sushi', title: 'sushi', imgSrc:'img/sushi-icon.png'},
     {name: 'Напої', href: '/drinks', title: 'drinks', imgSrc:'img/drinks-icon.png'},
     {name: 'Закуски', href: '/snacks', title: 'snacks', imgSrc:'img/snacks-icon.png'},
-    {name: 'Комбо', href: '/kombo', title: 'kombo', imgSrc:'img/combo-icon.png'},
     {name: 'Десерти', href: '/desserts', title: 'desserts', imgSrc:'img/desserts-icon.png'},
     {name: 'Соуси', href: '/sauces', title: 'sauces', imgSrc:'img/sauces-icon.png'}
   ];
@@ -47,12 +49,14 @@ function App() {
       const drinksResp = productsResponce.data[2].drinks;
       const snacksResp = productsResponce.data[3].snacks;
       const saucesResp = productsResponce.data[4].sauces;
+      const dessertsResp = productsResponce.data[5].desserts;
 
       setPizza(pizzaResp);
       setSushi(sushiResp);
       setDrinks(drinksResp);
       setSnacks(snacksResp);
       setSauces(saucesResp);
+      setDesserts(dessertsResp);
     }
     getProducts();
 
@@ -184,52 +188,52 @@ function App() {
   //     "id": 2,
   //     "sushi": [
   //       {"id": 9,
-  //       "imgUrl": "img/sushi1.jpg",
-  //       "title": "Сашимі",
-  //       "compound": "Семга, рис, сир креметто, соус унагы, креветка, авокадо",
-  //       "price": 250
+  //       "imgUrl": "img/sushi1.webp",
+  //       "title": "Аскава",
+  //       "compound": "лосось, сир, огірок, кунжут, ікра лосося 300гр",
+  //       "price": 225
   //       },
   //       {"id": 10,
-  //       "imgUrl": "img/sushi2.jpg",
-  //       "title": "Філадельфія крем-брюлле",
-  //       "compound": "Семга, рис, сир креметто, соус унагы, креветка, авокадо",
-  //       "price": 250
+  //       "imgUrl": "img/sushi2.webp",
+  //       "title": "Вугорь під сонцем",
+  //       "compound": "вугорь, сир, огірок, тобіка, унагі 300гр",
+  //       "price": 240
   //       },
   //       {"id": 11,
-  //       "imgUrl": "img/sushi3.jpg",
-  //       "title": "Сашимі",
-  //       "compound": "Семга, рис, сир креметто, соус унагы, креветка, авокадо",
-  //       "price": 250
+  //       "imgUrl": "img/sushi3.webp",
+  //       "title": "Каліфорнія вугор",
+  //       "compound": "Каліфорнія вугор (вугор, авокадо, огірок, тобіко) 300гр",
+  //       "price": 258
   //       },
   //       {"id": 12,
-  //       "imgUrl": "img/sushi4.jpg",
-  //       "title": "Сашимі",
-  //       "compound": "Семга, рис, сир креметто, соус унагы, креветка, авокадо",
-  //       "price": 250
+  //       "imgUrl": "img/sushi4.webp",
+  //       "title": "Зелений дракон",
+  //       "compound": "вугор, авокадо, сир, спайсі соус, огірок, унагі, кунжут 300гр",
+  //       "price": 350
   //       },
   //       {"id": 13,
-  //       "imgUrl": "img/sushi5.jpg",
-  //       "title": "Сашимі",
-  //       "compound": "Семга, рис, сир креметто, соус унагы, креветка, авокадо",
-  //       "price": 250
+  //       "imgUrl": "img/sushi5.webp",
+  //       "title": "Золотий гребінець",
+  //       "compound": "гребінець, креветка в темпура, авокадо, сир, тобіко, спайс 300гр",
+  //       "price": 300
   //       },
   //       {"id": 14,
-  //       "imgUrl": "img/sushi6.jpg",
-  //       "title": "Сашимі",
-  //       "compound": "Семга, рис, сир креметто, соус унагы, креветка, авокадо",
+  //       "imgUrl": "img/sushi6.webp",
+  //       "title": "Спайсі",
+  //       "compound": "сир, огірок, лосось, унагі, спайсі соус, кунжут 250гр",
   //       "price": 250
   //       },
   //       {"id": 15,
-  //       "imgUrl": "img/sushi7.jpg",
-  //       "title": "Сашимі",
-  //       "compound": "Семга, рис, сир креметто, соус унагы, креветка, авокадо",
-  //       "price": 250
+  //       "imgUrl": "img/sushi7.webp",
+  //       "title": "Токіо рол",
+  //       "compound": "омлет томаго, вугор, вершковий крем сир, огірок, хіяші, білий кунжут",
+  //       "price": 275
   //       },
   //       {"id": 16,
-  //       "imgUrl": "img/sushi8.jpg",
-  //       "title": "Сашимі",
-  //       "compound": "Семга, рис, сир креметто, соус унагы, креветка, авокадо",
-  //       "price": 250
+  //       "imgUrl": "img/sushi8.webp",
+  //       "title": "Філа Лосось Гриль",
+  //       "compound": "лосось обпеченний відкритим вогнем, сир, огірок, тобіко, унаги, кунжут",
+  //       "price": 280
   //       }
   //     ]
   //   },
@@ -307,8 +311,8 @@ function App() {
   //     "id": 5,
   //     "sauces": [
   //       {"id": 26,
-  //        "imgUrl": "img/garlicky.png",
-  //        "title": "Часниковтй соус",
+  //        "imgUrl": "img/garlicky.webp",
+  //        "title": "Часниковий соус",
   //        "compound": "Вага: 30гр",
   //        "price": 29
   //       },
@@ -331,6 +335,29 @@ function App() {
   //        "price": 29
   //       }
   //     ]
+  //   },
+  //   {
+  //     "id": 6,
+  //     "desserts": [
+  //       {"id": 30,
+  //        "imgUrl": "img/desserts1.png",
+  //        "title": "Печиво «Сантимелі» з корицею",
+  //        "compound": "Кількість: 4 шт (100гр)",
+  //        "price": 125
+  //       },
+  //       {"id": 31,
+  //        "imgUrl": "img/desserts2.png",
+  //        "title": "Рогалики",
+  //        "compound": "Кількість: 3 шт (85гр)",
+  //        "price": 130
+  //       },
+  //       {"id": 32,
+  //        "imgUrl": "img/desserts3.png",
+  //        "title": "Сирники",
+  //        "compound": "Кількість: 3 шт (120гр)",
+  //        "price": 140
+  //       }
+  //     ]
   //   }
   // ];
   
@@ -342,8 +369,11 @@ function App() {
         drinks,
         snacks,
         sauces,
+        desserts,
         isCartOpen,
         setIsCartOpen,
+        isMobileMenuOpen,
+        setIsMobileMenuOpen,
         cartItems,
         setCartItems,
         onCartAdded,
@@ -370,6 +400,7 @@ function App() {
           <Route path='/drinks' element={ <DrinksPage />}></Route>
           <Route path='/snacks' element={ <SnacksPage />}></Route>
           <Route path='/sauces' element={ <SaucesPage />}></Route>
+          <Route path='/desserts' element={ <DessertsPage />}></Route>
         </Routes>
       </div>
     </AnywherePizzaContext.Provider>
