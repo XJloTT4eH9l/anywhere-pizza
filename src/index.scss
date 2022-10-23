@@ -99,6 +99,7 @@ svg {
 }
 
 .d-flex {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -112,6 +113,7 @@ svg {
 .title {
   font-weight: 600;
   font-size: 40px;
+  margin-bottom: 30px;
 }
 
 .container {
@@ -122,9 +124,17 @@ svg {
 
 .btn {
   padding: 13px 32px;
+  border: 1px solid $primary-color;
   border-radius: 6px;
-  color: $white-color;
-  background-color: $primary-color;
+  color: $primary-color;
+  background-color: $white-color;
+  transition: color, background-color 0.3s ease-in-out;
+  @media(min-width: 992px) {
+    &:hover {
+      color: $white-color;
+      background-color: $primary-color;
+    }
+  }
 }
 
 .homepage {
@@ -132,6 +142,7 @@ svg {
 }
 .page {
   padding-top: 100px;
+  padding-bottom: 50px;
 }
 
 .catalog {

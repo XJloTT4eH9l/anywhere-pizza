@@ -20,14 +20,14 @@ function Header() {
                 <div className="header__inner">
                     <MobileNav />
                     <Link 
-                    to='/' 
-                    className='header__logo' 
-                    onClick={() => {
-                    setDisplayNav(false);
-                    setNavLinkActive(null);
-                    }}>
-                        <img src='img/logo.png' alt='Лого' />
-                        <h1>Anywhere Піцца</h1>
+                        to='/' 
+                        className='header__logo' 
+                        onClick={() => {
+                            setDisplayNav(false);
+                            setNavLinkActive(null);
+                        }}>
+                            <img src='img/logo.png' alt='Лого' />
+                            <h1>Anywhere Піцца</h1>
                     </Link>
                     <BurgerBtn />
                     {displayNav && <Nav navType='nav' flexType='__list' />}

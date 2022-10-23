@@ -1,7 +1,6 @@
 @import '../../variables.scss';
 
 .filter {
-    position: relative;
     max-width: 250px;
     &--active {
         position: static;
@@ -17,8 +16,10 @@
         &--active {
             transform: translateY(-10px);
         }
-        &:hover .filter__img {
-            fill: $primary-color;
+        @media(min-width: 992px) {
+            &:hover .filter__img {
+                fill: $primary-color;
+            }
         }
     }
     &__img {
@@ -32,19 +33,16 @@
     }
     &__list {
         position: absolute;
-        width: 100%;
-        bottom: -130px;
-        left: -25px;
-        display: none;
+        width: 200px;
+        top: 70px;
+        right: 0;
         background-color: $white-color;
         border-radius: 6px;
+        transition: opacity 0.5s ease-in-out;
         opacity: 0;
-        transition: opacity 0.3s linear;
         &--active {
-            display: block;
-            max-width: 300px;
-            z-index: 10;
             opacity: 1;
+            z-index: 10;
         }
     }
     &__item {
@@ -62,8 +60,10 @@
         &:last-child {
             border-bottom: none;
         }
-        &:hover {
-            background-color: $primary-color;
+        @media(min-width: 992px) {
+            &:hover {
+                background-color: $primary-color;
+            }
         }
     }
 }
