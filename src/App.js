@@ -16,6 +16,7 @@ import ComboPage from './pages/ComboPage';
 //components
 import Header from './components/Header/Header';
 import SideCart from './components/SideCart/SideCart';
+import Footer from './components/Footer/Footer';
 
 function App() {
   //products
@@ -505,6 +506,7 @@ function App() {
           <Route path='/desserts' element={ <DessertsPage />}></Route>
           <Route path='/combo' element={ <ComboPage />}></Route>
         </Routes>
+        <Footer />
       </div>
     </AnywherePizzaContext.Provider>
   );

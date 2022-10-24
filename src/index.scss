@@ -17,8 +17,8 @@ h2,
 h3,
 h4,
 p,
-ul[class],
-ol[class],
+ul,
+ol,
 li,
 figure,
 figcaption,
@@ -149,6 +149,7 @@ svg {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+  margin-bottom: 60px;
   @media(max-width: 1350px) {
     grid-template-columns: repeat(3, 1fr);
   }

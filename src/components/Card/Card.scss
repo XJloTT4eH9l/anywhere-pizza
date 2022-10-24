@@ -22,6 +22,10 @@
     @media(max-width: 420px) {
         width: 300px;
     }
+    @media(max-width: 350px) {
+        width: 260px;
+    }
+    
     &:hover {
         transform: translateY(-10px);
         @media(max-width: 991px) {
@@ -34,6 +38,9 @@
         @media(max-width: 991px) {
             text-align: center;
         }
+        @media(max-width: 550px) {
+            padding: 10px;
+        }
         & img {
             margin-bottom: 16px;
             width: 258px;
@@ -41,6 +48,9 @@
             @media(max-width: 991px) {
                 margin: 0 auto;
                 margin-bottom: 16px;
+            }
+            @media(max-width: 450px) {
+                width: 238px;
             }
         }
     }
