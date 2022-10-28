@@ -10,7 +10,7 @@ function Notification({ title, deskr, imgSrc }) {
     }
     return (
         <div className='notification'>
-            <img className='notification__img' src={imgSrc} alt='asd'/>
+            <img className='notification__img' src={imgSrc} alt={title}/>
             <h3 className='notification__title'>{title}</h3>
             <p className='notification__deskr'>{deskr}</p>
             <button className='notification__btn' onClick={closeCart}>Повернутись до каталогу</button>

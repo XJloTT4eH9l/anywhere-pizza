@@ -1,0 +1,66 @@
+@import '../../variables.scss';
+
+.slider-card {
+    padding: 16px;
+    max-width: 255px;
+    border-radius: 12px;
+    background-color: $white-color;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+    @media(max-width: 1024px) {
+        height: 350px;
+    }
+    @media(max-width: 900px) {
+        height: 300px;
+    }
+    @media(max-width: 480px) {
+        height: 350px;
+    }
+    @media(max-width: 600px) {
+        max-width: 255px;
+    }
+    @media(max-width: 480px) {
+        margin: 0 auto;
+    }
+    &__img {
+        border-radius: 12px;
+        margin-bottom: 15px;
+    }
+    &__title {
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+}
+.slick-slide > div {
+    margin: 0 10px;
+}
+
+.slick-list {
+    margin: 0 -10px;
+}
+
+.slick-next::before {
+    display: none;
+}
+
+.slick-prev::before {
+    display: none;
+}
+
+.slick-arrow .slick-next:hover {
+    img {
+        opacity: 0.8;
+    }
+}
+
+.slick-dots li.slick-active button:before {
+    color: $primary-color;
+}
+
+.d-flex {
+    display: flex;
+}

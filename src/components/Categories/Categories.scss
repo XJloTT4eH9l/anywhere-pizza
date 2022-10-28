@@ -9,8 +9,7 @@
         grid-template-columns: repeat(4, 1fr);
     }
     @media(max-width: 991px) {
-        grid-template-columns: repeat(7, 1fr);
-        overflow-x: scroll;
+        grid-template-columns: repeat(2, 1fr);
     }
     &__item {
         padding: 20px 40px;

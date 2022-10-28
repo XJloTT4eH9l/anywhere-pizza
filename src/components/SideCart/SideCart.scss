@@ -35,6 +35,12 @@
     &--active {
         right: 0;
     }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1 1 auto;
+    }
     &__top {
         margin-top: 32px;
         margin-bottom: 20px;

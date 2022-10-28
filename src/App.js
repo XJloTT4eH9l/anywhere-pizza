@@ -12,6 +12,7 @@ import SnacksPage from './pages/SnacksPage';
 import SaucesPage from './pages/SaucesPage';
 import DessertsPage from './pages/DessertsPage';
 import ComboPage from './pages/ComboPage';
+import CartPage from './pages/CartPage';
 
 //components
 import Header from './components/Header/Header';
@@ -342,37 +343,55 @@ function App() {
   //       "title": "Смажені курячі крильця",
   //       "compound": "Вага: 350г",
   //       "price": 180
+  //       },
+  //       {"id": 32,
+  //       "imgUrl": "img/squid-rings.jpg",
+  //       "title": "Кільця кальмара в клярі",
+  //       "compound": "Вага: 100г",
+  //       "price": 99
+  //       },
+  //       {"id": 33,
+  //       "imgUrl": "img/cheese sticks.jpg",
+  //       "title": "Cирні палички",
+  //       "compound": "6 штук",
+  //       "price": 59
+  //       },
+  //       {"id": 34,
+  //       "imgUrl": "img/nagets.jpg",
+  //       "title": "Нагетси",
+  //       "compound": "6 штук",
+  //       "price": 59
   //       }
   //     ]
   //   },
   //   {
   //     "id": 5,
   //     "sauces": [
-  //       {"id": 32,
+  //       {"id": 35,
   //        "imgUrl": "img/mustard.jpg",
   //        "title": "Гірчиця",
   //        "compound": "Вага: 30г",
   //        "price": 29
   //       },
-  //       {"id": 33,
+  //       {"id": 36,
   //        "imgUrl": "img/ketchup.jpg",
   //        "title": "Кетчуп",
   //        "compound": "Вага: 30г",
   //        "price": 29
   //       },
-  //       {"id": 34,
+  //       {"id": 37,
   //        "imgUrl": "img/mayonez.jpg",
   //        "title": "Майонез",
   //        "compound": "Вага: 30г",
   //        "price": 29
   //       },
-  //       {"id": 35,
+  //       {"id": 38,
   //        "imgUrl": "img/cheeze-sauce.jpg",
   //        "title": "Сирний соус",
   //        "compound": "Вага: 30г",
   //        "price": 29
   //       },
-  //       {"id": 36,
+  //       {"id": 39,
   //        "imgUrl": "img/cari.jpg",
   //        "title": "Соус карі",
   //        "compound": "Вага: 30г",
@@ -383,43 +402,43 @@ function App() {
   //   {
   //     "id": 6,
   //     "desserts": [
-  //       {"id": 37,
+  //       {"id": 40,
   //        "imgUrl": "img/desserts1.png",
   //        "title": "Печиво «Сантимелі» з корицею",
   //        "compound": "Кількість: 4 шт (100г)",
   //        "price": 125
   //       },
-  //       {"id": 38,
+  //       {"id": 41,
   //        "imgUrl": "img/desserts2.png",
   //        "title": "Рогалики",
   //        "compound": "Кількість: 3 шт (85г)",
   //        "price": 130
   //       },
-  //       {"id": 39,
+  //       {"id": 42,
   //        "imgUrl": "img/desserts3.png",
   //        "title": "Сирники",
   //        "compound": "Кількість: 3 шт (120г)",
   //        "price": 140
   //       },
-  //       {"id": 40,
+  //       {"id": 43,
   //        "imgUrl": "img/keks.jpg",
   //        "title": "Лава кейк",
   //        "compound": "Кількість: 1 шт (96г)",
   //        "price": 90
   //       },
-  //       {"id": 41,
+  //       {"id": 44,
   //        "imgUrl": "img/desserts4.jpg",
   //        "title": "Вишневі роли",
   //        "compound": "Кількість: 7 шт (276г)",
   //        "price": 110
   //       },
-  //       {"id": 42,
+  //       {"id": 45,
   //        "imgUrl": "img/mafin.jpg",
   //        "title": "Мафін кокосовий",
   //        "compound": "Кількість: 1 шт (80г)",
   //        "price": 60
   //       },
-  //       {"id": 43,
+  //       {"id": 46,
   //        "imgUrl": "img/desserts5.jpg",
   //        "title": "Абрикосові роли",
   //        "compound": "Кількість: 7 шт (276г)",
@@ -429,31 +448,31 @@ function App() {
   //   },
   //   {"id": 7,
   //    "combo": [
-  //       {"id": 43,
+  //       {"id": 47,
   //         "imgUrl": "img/combo1.jpg",
   //         "title": "Фіче бокс 1",
   //         "compound": "Пеппероні, картопля фрі, нагетси, 1л Coca-Cola, 2 соуси",
   //         "price": 294
   //       },
-  //       {"id": 44,
+  //       {"id": 48,
   //         "imgUrl": "img/combo2.jpg",
   //         "title": "Фіче бокс 2",
   //         "compound": "Пеппероні, нагетси, крильця в паніровці, 1л Coca-Cola, 2 соуси",
   //         "price": 344
   //       },
-  //       {"id": 45,
+  //       {"id": 49,
   //         "imgUrl": "img/combo3.jpg",
   //         "title": "Міні вечірка 2 піци та напій",
   //         "compound": "4 сезони, бургер піца, 1л Coca-Cola",
   //         "price": 324
   //       },
-  //       {"id": 46,
+  //       {"id": 50,
   //         "imgUrl": "img/combo4.jpg",
   //         "title": "Мала вечірка 3 піци та напій",
   //         "compound": "Гавайська, Бургер піца, вершкова піца, 2л Coca-Cola",
   //         "price": 479
   //       },
-  //       {"id": 47,
+  //       {"id": 51,
   //         "imgUrl": "img/combo5.jpg",
   //         "title": "Велика вечірка 4 піци та напій",
   //         "compound": "Гавайська, Бургер піца, вершкова піца, морська піца, 2л Coca-Cola",
@@ -496,16 +515,19 @@ function App() {
       <div className='app'>
         <Header />
         <SideCart />
-        <Routes>
-          <Route path='/' element={ <Home /> }></Route>
-          <Route path='/pizza' element={ <PizzaPage /> }></Route>
-          <Route path='/sushi' element={ <SushiPage /> }></Route>
-          <Route path='/drinks' element={ <DrinksPage />}></Route>
-          <Route path='/snacks' element={ <SnacksPage />}></Route>
-          <Route path='/sauces' element={ <SaucesPage />}></Route>
-          <Route path='/desserts' element={ <DessertsPage />}></Route>
-          <Route path='/combo' element={ <ComboPage />}></Route>
-        </Routes>
+        <main className='main'>
+          <Routes>
+            <Route path='/' element={ <Home /> }></Route>
+            <Route path='/pizza' element={ <PizzaPage /> }></Route>
+            <Route path='/sushi' element={ <SushiPage /> }></Route>
+            <Route path='/drinks' element={ <DrinksPage /> }></Route>
+            <Route path='/snacks' element={ <SnacksPage /> }></Route>
+            <Route path='/sauces' element={ <SaucesPage /> }></Route>
+            <Route path='/desserts' element={ <DessertsPage /> }></Route>
+            <Route path='/combo' element={ <ComboPage /> }></Route>
+            <Route path='/cart' element={ <CartPage /> }></Route>
+          </Routes>
+        </main>
         <Footer />
       </div>
     </AnywherePizzaContext.Provider>

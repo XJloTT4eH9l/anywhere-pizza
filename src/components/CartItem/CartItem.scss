@@ -2,52 +2,73 @@
 
 .cart-item {
     margin: 0 auto;
-    max-width: 380px;
+    max-width: 100%;
     border: 1px solid $gray-line-color;
     border-radius: 12px;
     padding: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: $white-color;
     &:not(:last-child) {
         margin-bottom: 20px;
     }
-    &__img {
-        width: 95px;
-        height: auto;
+    @media(max-width: 600px) {
+        flex-direction: column;
+        align-items: normal;
     }
-    &__content {
-        width: 240px;
+    &__info {
+        display: flex;
+        align-items: center;
+        @media(max-width: 600px) {
+            justify-content: center;
+        }
     }
     &__title {
         font-weight: 600;
         font-size: 16px;
         margin-bottom: 12px;
     }
-    &__quanity {
+    &__img {
+        width: 95px;
+        height: auto;
+        margin-right: 15px;
+    }
+    &__summary {
+        display: flex;
+        align-items: center;
+        @media(max-width: 600px) {
+            justify-content: space-between;
+        }
+    }
+    &__counter {
         display: flex;
         align-items: center;
         padding: 14px 8px;
         border-radius: 6px;
         background-color: $primary-light-color;
-    }
-    &__amount {
-        font-size: 16px;
-        color: $primary-color;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    &__bottom {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        margin-right: 40px;
+        @media(max-width: 600px) {
+            margin-right: 0;
+        }
     }
     &__btn {
         font-size: 18px;
         color: $primary-color;
     }
+    &__amount {
+        width: 20px;
+        text-align: center;
+        font-size: 16px;
+        color: $primary-color;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
     &__price {
+        display: block;
+        text-align: center;
         font-weight: 600;
+        width: 100px;
         font-size: 16px;
         color: $primary-color;
     }
