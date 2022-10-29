@@ -2,7 +2,7 @@
 
 .notification {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 380px;
@@ -10,6 +10,10 @@
     &__img {
         margin: 0 auto;
         margin-bottom: 20px;
+        @media(max-width: 991px) {
+            width: 250px;
+            height: auto;
+        }
     }
     &__title {
         font-weight: 600;

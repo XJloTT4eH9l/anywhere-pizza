@@ -120,6 +120,12 @@ svg {
   font-weight: 600;
   font-size: 40px;
   margin-bottom: 30px;
+  @media(max-width: 900px) {
+    font-size: 30px;
+  }
+  @media(max-width: 600px) {
+    text-align: center;
+  }
 }
 
 .container {
@@ -154,6 +160,7 @@ svg {
 
 .main {
   position: relative;
+  min-height: 450px;
 }
 
 .catalog {
@@ -190,6 +197,7 @@ svg {
   }
   @media(max-width: 600px) {
     max-width: 450px;
+    margin-bottom: 50px;
   }
   @media(max-width: 520px) {
     max-width: 350px;
@@ -202,6 +210,9 @@ svg {
     font-size: 24px;
     margin-top: 30px;
     margin-bottom: 30px;
+    @media(max-width: 600px) {
+      text-align: center;
+    }
   }
   &__summ {
     display: block;
