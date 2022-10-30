@@ -55,7 +55,7 @@ function SideCart() {
                                 </>
                             ): (
                                 <Notification
-                                    title='Корзина порожня'
+                                    title='Кошик порожній'
                                     deskr='Додайте хоча б один товар в корзину для того щоб зробити замовлення'
                                     imgSrc='img/empty-cart.webp'
                                 >

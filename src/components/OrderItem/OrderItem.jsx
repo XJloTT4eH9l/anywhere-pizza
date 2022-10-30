@@ -55,7 +55,7 @@ function OrderItem(props) {
                                     <h3 className='orders-item__title'>{item.title}</h3>
                                 </div>
                                 <div className='orders-item__content-right'>
-                                    <div className='orders-item__count'>{item.counter} товар</div>
+                                    <div className='orders-item__count'>{item.counter}</div>
                                     <span className='orders-item__price'>{item.price} грн</span>
                                 </div>
                             </div>

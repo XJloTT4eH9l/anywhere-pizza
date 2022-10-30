@@ -1,0 +1,52 @@
+@import '../../variables.scss';
+
+.hero {
+    width: 100%;
+    min-height: 400px;
+    padding: 60px;
+    overflow: hidden;
+    border-radius: 25px;
+    background-repeat: no-repeat;
+    @media(max-width: 480px) {
+        padding: 40px;
+        min-height: 300px;
+    }
+    &__text-block {
+        margin-top: 50px;
+        @media(max-width: 480px) {
+            margin-top: 40px;
+        }
+    }
+    &__title {
+        margin-bottom: 16px;
+        font-size: 60px;
+        font-weight: 600;
+        color: $primary-color;
+        @media(max-width: 991px) {
+            font-size: 45px;
+        }
+        @media(max-width: 600px) {
+            font-size: 35px;
+        }
+        @media(max-width: 480px) {
+            font-size: 25px;
+        }
+    }
+    &__about {
+        font-size: 20px;
+        margin-bottom: 30px;
+        @media(max-width: 480px) {
+            font-size: 16px;
+        }
+    }
+    &__link {
+        padding: 13px 20px;
+        font-size: 16px;
+        border-radius: 6px;
+        color: $white-color;
+        background-color: $primary-color;
+        @media(max-width: 600px) {
+            padding: 10px 15px;
+        }
+    }
+}

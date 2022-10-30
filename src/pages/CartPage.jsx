@@ -40,7 +40,7 @@ function CartPage() {
                 </>
             ) : (
                 <Notification
-                    title={orderDone ? `Замовлення №${ordersId - 1} прийнято` : 'Корзина порожня'}
+                    title={orderDone ? `Замовлення №${ordersId - 1} прийнято` : 'Кошик порожній'}
                     deskr={orderDone ? 'Дякуємо за замовлення! Приблизний час доставки 45 хвилин': 'Додайте хоча б один товар в корзину для того щоб зробити замовлення'}
                     imgSrc={orderDone ? 'img/order.png' :'img/empty-cart.webp'}
                 >
