@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AnywherePizzaContext } from "../context";
 
 import Notification from "../components/Notification/Notification";
@@ -10,7 +11,7 @@ function CartPage() {
     const {cartItems, onCartAdded, getCartSummary, sauces, snacks, orderDone, ordersId} = useContext(AnywherePizzaContext);
 
     return (
-        <section className="cart">
+        <section className="container-short">
             {cartItems.length > 0 ? (
                 <>
                     <h1 className="title">Ваше замовлення</h1>
@@ -31,8 +32,8 @@ function CartPage() {
                             })
                         }
                     </div>
-                    <span className='cart__summ'>Разом: {getCartSummary()} грн</span>
-                    <h3 className="cart__title">Додати до замовлення?</h3>
+                    <span className='container-short__summ'>Разом: {getCartSummary()} грн</span>
+                    <h3 className="container-short__title">Додати до замовлення?</h3>
                     <SliderCards title={'Соуси'} products={sauces} />
                     <SliderCards title={'Закуски'} products={snacks} />
                     <Form />
@@ -42,7 +43,9 @@ function CartPage() {
                     title={orderDone ? `Замовлення №${ordersId - 1} прийнято` : 'Корзина порожня'}
                     deskr={orderDone ? 'Дякуємо за замовлення! Приблизний час доставки 45 хвилин': 'Додайте хоча б один товар в корзину для того щоб зробити замовлення'}
                     imgSrc={orderDone ? 'img/order.png' :'img/empty-cart.webp'}
-                />
+                >
+                    { <Link to='/' className='notification__btn'>На головну</Link> } 
+                </Notification>
             )
             }
         </section>

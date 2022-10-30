@@ -13,6 +13,7 @@ import SaucesPage from './pages/SaucesPage';
 import DessertsPage from './pages/DessertsPage';
 import ComboPage from './pages/ComboPage';
 import CartPage from './pages/CartPage';
+import OrdersPage from './pages/OrdersPage';
 
 //components
 import Header from './components/Header/Header';
@@ -47,7 +48,8 @@ function App() {
     {name: 'Закуски', href: '/snacks', title: 'snacks', imgSrc:'img/snacks-icon.png'},
     {name: 'Десерти', href: '/desserts', title: 'desserts', imgSrc:'img/desserts-icon.png'},
     {name: 'Соуси', href: '/sauces', title: 'sauces', imgSrc:'img/sauces-icon.png'},
-    {name: 'Комбо', href: '/combo', title: 'combo', imgSrc:'img/combo-icon.png'}
+    {name: 'Комбо', href: '/combo', title: 'combo', imgSrc:'img/combo-icon.png'},
+    {name: 'Замовлення', href: '/orders', title: 'orders', imgSrc: 'img/orders-icon.png'}
   ];
 
   //setProducts
@@ -204,6 +206,7 @@ function App() {
             <Route path='/desserts' element={ <DessertsPage /> }></Route>
             <Route path='/combo' element={ <ComboPage /> }></Route>
             <Route path='/cart' element={ <CartPage /> }></Route>
+            <Route path='/orders' element={ <OrdersPage />}></Route>
           </Routes>
         </main>
         <Footer />

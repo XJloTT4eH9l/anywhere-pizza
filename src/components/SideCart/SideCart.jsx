@@ -58,7 +58,9 @@ function SideCart() {
                                     title='Корзина порожня'
                                     deskr='Додайте хоча б один товар в корзину для того щоб зробити замовлення'
                                     imgSrc='img/empty-cart.webp'
-                                /> 
+                                >
+                                    { <button className='notification__btn' onClick={onCartClose}>Повернутись до каталогу</button> }
+                                </Notification> 
                             )
                         }
                     

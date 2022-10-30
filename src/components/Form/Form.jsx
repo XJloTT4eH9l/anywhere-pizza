@@ -23,7 +23,7 @@ function Form() {
             id: ordersId,
             name: name,
             tel: tel,
-            addres: delivery === 'Доставка' ? street + ' ' + house : 'Самовивіз',
+            address: delivery === 'Доставка' ? street + ' ' + house : 'Самовивіз',
             email: email,
             summary: getCartSummary(),
             products: cartItems
