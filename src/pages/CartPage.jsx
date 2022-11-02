@@ -44,7 +44,7 @@ function CartPage() {
                     deskr={orderDone ? 'Дякуємо за замовлення! Приблизний час доставки 45 хвилин': 'Додайте хоча б один товар в корзину для того щоб зробити замовлення'}
                     imgSrc={orderDone ? 'img/order.png' :'img/empty-cart.webp'}
                 >
-                    { <Link to='/' className='notification__btn'>На головну</Link> } 
+                    { <Link to='/anywhere-pizza/' className='notification__btn'>На головну</Link> } 
                 </Notification>
             )
             }

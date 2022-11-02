@@ -43,7 +43,7 @@ function SideCart() {
                                     <div className="side-cart__bottom">
                                         <span className='side-cart__price'>Разом: {getCartSummary()} грн</span>
                                         <Link 
-                                            to='/cart'
+                                            to='/anywhere-pizza/cart'
                                             className='side-cart__button' 
                                             onClick={() => {
                                                 setIsCartOpen(false);

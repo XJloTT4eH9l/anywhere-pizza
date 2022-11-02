@@ -36,7 +36,7 @@ function OrdersPage() {
                         deskr='Для того щоб зробити замовлення додайте товар в корзину'
                         imgSrc='img/empty-cart.webp' 
                     >   
-                        { <Link to='/' className='notification__btn' onClick={() => setNavLinkActive(null)}>На головну</Link> } 
+                        { <Link to='/anywhere-pizza/' className='notification__btn' onClick={() => setNavLinkActive(null)}>На головну</Link> } 
                     </Notification>
                 )
             }

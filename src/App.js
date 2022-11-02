@@ -42,14 +42,14 @@ function App() {
   const [orderDone, setOrderDone] = useState(false);
 
   const navLinks = [
-    {name: 'Піца', href: '/pizza', title: 'pizza', imgSrc:'img/pizza-icon.png'},
-    {name: 'Суші', href: '/sushi', title: 'sushi', imgSrc:'img/sushi-icon.png'},
-    {name: 'Напої', href: '/drinks', title: 'drinks', imgSrc:'img/drinks-icon.png'},
-    {name: 'Закуски', href: '/snacks', title: 'snacks', imgSrc:'img/snacks-icon.png'},
-    {name: 'Десерти', href: '/desserts', title: 'desserts', imgSrc:'img/desserts-icon.png'},
-    {name: 'Соуси', href: '/sauces', title: 'sauces', imgSrc:'img/sauces-icon.png'},
-    {name: 'Комбо', href: '/combo', title: 'combo', imgSrc:'img/combo-icon.png'},
-    {name: 'Замовлення', href: '/orders', title: 'orders', imgSrc: 'img/orders-icon.png'}
+    {name: 'Піца', href: '/anywhere-pizza/pizza', title: 'pizza', imgSrc:'img/pizza-icon.png'},
+    {name: 'Суші', href: '/anywhere-pizza/sushi', title: 'sushi', imgSrc:'img/sushi-icon.png'},
+    {name: 'Напої', href: '/anywhere-pizza/drinks', title: 'drinks', imgSrc:'img/drinks-icon.png'},
+    {name: 'Закуски', href: '/anywhere-pizza/snacks', title: 'snacks', imgSrc:'img/snacks-icon.png'},
+    {name: 'Десерти', href: '/anywhere-pizza/desserts', title: 'desserts', imgSrc:'img/desserts-icon.png'},
+    {name: 'Соуси', href: '/anywhere-pizza/sauces', title: 'sauces', imgSrc:'img/sauces-icon.png'},
+    {name: 'Комбо', href: '/anywhere-pizza/combo', title: 'combo', imgSrc:'img/combo-icon.png'},
+    {name: 'Замовлення', href: '/anywhere-pizza/orders', title: 'orders', imgSrc: 'img/orders-icon.png'}
   ];
 
   //setProducts
@@ -196,16 +196,16 @@ function App() {
         <SideCart />
         <main className='main'>
           <Routes>
-            <Route path='/' element={ <Home /> }></Route>
-            <Route path='/pizza' element={ <PizzaPage /> }></Route>
-            <Route path='/sushi' element={ <SushiPage /> }></Route>
-            <Route path='/drinks' element={ <DrinksPage /> }></Route>
-            <Route path='/snacks' element={ <SnacksPage /> }></Route>
-            <Route path='/sauces' element={ <SaucesPage /> }></Route>
-            <Route path='/desserts' element={ <DessertsPage /> }></Route>
-            <Route path='/combo' element={ <ComboPage /> }></Route>
-            <Route path='/cart' element={ <CartPage /> }></Route>
-            <Route path='/orders' element={ <OrdersPage />}></Route>
+            <Route path='/anywhere-pizza/' element={ <Home /> }></Route>
+            <Route path='/anywhere-pizza/pizza' element={ <PizzaPage /> }></Route>
+            <Route path='/anywhere-pizza/sushi' element={ <SushiPage /> }></Route>
+            <Route path='/anywhere-pizza/drinks' element={ <DrinksPage /> }></Route>
+            <Route path='/anywhere-pizza/snacks' element={ <SnacksPage /> }></Route>
+            <Route path='/anywhere-pizza/sauces' element={ <SaucesPage /> }></Route>
+            <Route path='/anywhere-pizza/desserts' element={ <DessertsPage /> }></Route>
+            <Route path='/anywhere-pizza/combo' element={ <ComboPage /> }></Route>
+            <Route path='/anywhere-pizza/cart' element={ <CartPage /> }></Route>
+            <Route path='/anywhere-pizza/orders' element={ <OrdersPage />}></Route>
           </Routes>
         </main>
         <Footer />

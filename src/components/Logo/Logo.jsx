@@ -8,7 +8,7 @@ function Logo({type}) {
 
     return (
         <Link 
-        to='/' 
+        to='/anywhere-pizza/' 
         className={type} 
         onClick={() => {
             setDisplayNav(false);
