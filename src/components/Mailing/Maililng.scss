@@ -1,0 +1,131 @@
+@import '../../variables.scss';
+
+.mailing {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    margin-bottom: 50px;
+    display: flex;
+    padding: 40px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 25px;
+    background-color: $primary-light-color;
+    @media(max-width: 1200px) {
+        flex-direction: column;
+    }
+    @media(max-width: 530px) {
+        padding: 20px;
+    }
+    &__content {
+        @media(max-width: 1200px) {
+            text-align: center;
+        }
+        @media(max-width: 530px) {
+            margin-bottom: 30px;
+        }
+    }
+    &__form {
+        @media(max-width: 550px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+    &__title {
+        font-size: 35px;
+        &--primary {
+            color: $primary-color;
+        }
+        @media(max-width: 991px) {
+            font-size: 30px;
+        }
+        @media(max-width: 550px) {
+            font-size: 25px;
+        }
+    }
+    &__text {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    &__input {
+        width: 270px;
+        margin-right: 20px;
+        padding: 13px 16px;
+        border-radius: 15px;
+        outline: none;
+        border: 1px solid $gray-line-color;
+        transition: border-color 0.2s linear;
+        @media(max-width: 550px) {
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        &:focus {
+            border-color: $primary-color;
+        }
+        &--error {
+            border-color: $red-color;
+        }
+    }
+    &__btn {
+        font-size: 16px;
+        max-width: 130px;
+        margin: 0 auto;
+        padding: 10px 15px;
+        color: $white-color;
+        background-color: $primary-color;
+        border-radius: 6px;
+        transition: transform 0.2s ease-in-out;
+        z-index: 2;
+        &--disabled {
+            background-color: $gray-text-color;
+            cursor: default;
+            .mailing__btn:hover {
+                transform: translateX(0);
+            }
+        }
+        @media(min-width: 992px) {
+            &:hover {
+                transform: translateX(-10px);
+            }
+        }
+    }
+    &__modal {
+        position: absolute;
+        min-width: 300px;
+        min-height: 150px;
+        background-color: $primary-color;
+        border-radius: 15px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white-color;
+        opacity: 0;
+        transition: opacity 0.3s linear;
+        z-index: 1;
+        &--active {
+            opacity: 1;
+        }
+        @media(max-width: 550px) {
+            top: 25%;
+        }
+    }
+    &__top {
+        position: relative;
+    }
+    &__close {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    &__message {
+        font-size: 16px;
+        & span {
+            text-decoration: underline;
+        }
+    }
+}

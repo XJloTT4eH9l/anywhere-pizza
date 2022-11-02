@@ -39,6 +39,9 @@
     @media(max-height: 700px) {
         margin-top: 30px;
     }
+    @media(max-height: 500px) {
+        margin-top: 50px;
+    }
     &__list-column {
         display: flex;
         flex-direction: column;
@@ -46,6 +49,9 @@
     &__item {
         font-size: 18px;
         margin-bottom: 30px;
+        @media(max-height: 500px) {
+            margin-bottom: 15px;
+        }
     }
     &__item:not(:last-child) {
         margin-right: 32px;

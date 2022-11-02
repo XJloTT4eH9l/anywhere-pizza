@@ -1,5 +1,5 @@
 import './Form.scss';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { AnywherePizzaContext } from '../../context';
 
 function Form() {
@@ -9,8 +9,26 @@ function Form() {
     const [name, setName] = useState('');
     const [tel, setTel] = useState('');
     const [email, setEmail] = useState('');
+
     const [street, setStreet] = useState('');
+    const [streetError, setStreetError] = useState('Поле "Вулиця" не може бути пустим');
+    const [streetDirty, setStreetDirty] = useState(false);
     const [house, setHouse] = useState ('');
+    const [houseError, setHouseError] = useState('Поле "Будинок" не може бути пустим');
+    const [houseDirty, setHouseDirty] = useState(false);
+    const [formValid, setFormValid] = useState(false);
+
+    useEffect(() => {
+        if(delivery === 'Самовивіз') {
+            setFormValid(true)
+        } else if(delivery === 'Доставка') {
+            if(streetError || houseError) {
+                setFormValid(false);
+            }  else {
+                setFormValid(true);
+            }
+        }
+    }, [streetError, houseError, delivery])
 
     const deliveryOptions = [
         {name: 'delivery', title: 'Доставка'},
@@ -39,9 +57,43 @@ function Form() {
         setHouse('');
     }
 
+    function streetHandler(e) {
+        setStreet(e.target.value);
+        if(e.target.name === 'street') {
+            if(e.target.value.length > 20) {
+                setStreetError('Максимальна кількість символів - 20');
+            } else if(e.target.value.length === 0) {
+                setStreetError('Поле "Вулиця" не може бути пустим')
+            } else {
+                setStreetError('');
+            }
+        }
+    }
+
+    function houseHandler(e) {
+        setHouse(e.target.value);
+        if (e.target.name === 'house') {
+            if(e.target.value > 1000) {
+                setHouseError('Некоректний номер будинку')
+            }else if(e.target.value.length === 0) {
+                setHouseError('Поле "Будинок" не можу бути пустим')
+            } else {
+                setHouseError('');
+            }
+        }
+    }
+
+    function blurHandler(e) {
+        if(e.target.name === 'street') {
+            setStreetDirty(true);
+        } else if (e.target.name === 'house') {
+            setHouseDirty(true);
+        }
+    }
+
     return(
         <form className="form">
-            <h2 className="form__heading">О вас</h2>
+            <h2 className="form__heading">Про вас</h2>
             <div className="form__block">
                 <div className="form__item">
                     <label className="form__title" htmlFor="name">І'мя</label>
@@ -104,11 +156,15 @@ function Form() {
                 <div>
                     <div className='form__block'>
                         <div className='form__item'>
-                            <label className="form__title" htmlFor="street">Адреса</label>
+                            <label className="form__title" htmlFor="street">
+                                {(streetDirty && streetError) ? <span style={{color: 'red', marginBottom: '10px'}}>{streetError}</span> : 'Вулиця*'}
+                            </label>
                             <input 
-                            className="form__input"
+                            className={ streetError.length > 0 ? "form__input form__input--error" : 'form__input' }
+                            name='street'
                             value={street}
-                            onChange={(e) => setStreet(e.target.value)} 
+                            onChange={(e) => streetHandler(e)} 
+                            onBlur={(e) => blurHandler(e)}
                             id="street" 
                             placeholder="Вулиця" 
                             type="text" 
@@ -116,14 +172,18 @@ function Form() {
                             />
                         </div>
                         <div className='form__item'>
-                            <label className="form__title" htmlFor="house">Будинок</label>
+                            <label className="form__title" htmlFor="house">
+                                {(houseDirty && houseError) ? <span style={{color: 'red', marginBottom: '10px'}}>{houseError}</span> : 'Будинок*'}
+                            </label>
                             <input 
-                            className="form__input"
+                            className={ houseError.length > 0 ? "form__input form__input--error" : 'form__input' }
+                            name='house'
                             value={house}
-                            onChange={(e) => setHouse(e.target.value)}
+                            onChange={(e) => houseHandler(e)}
+                            onBlur={(e) => blurHandler(e)}
                             id="house" 
                             placeholder="Будинок" 
-                            type="text" 
+                            type="number" 
                             required 
                             />
                         </div>
@@ -137,7 +197,14 @@ function Form() {
             )}
             <div className='form__flex'>
                 <span className='form__summary'>Разом: {getCartSummary()} грн</span>
-                <button onClick={onClickOrder} className='btn' type='submit'>Оформити замовлення</button>
+                <button 
+                    onClick={onClickOrder} 
+                    className={ formValid ? 'btn' : 'btn form__btn--disabled' }
+                    disabled = {!formValid}
+                    type='submit'
+                >
+                    Оформити замовлення
+                </button>
             </div>
         </form>
     )

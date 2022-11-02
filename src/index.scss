@@ -148,6 +148,10 @@ svg {
       background-color: $primary-color;
     }
   }
+  &--active {
+    color: $white-color;
+    background-color: $primary-color;
+  }
 }
 
 .homepage {

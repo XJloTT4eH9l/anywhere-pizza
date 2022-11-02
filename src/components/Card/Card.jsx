@@ -3,10 +3,17 @@ import { useContext } from 'react';
 import {AnywherePizzaContext} from '../../context';
 
 function Card({id, imgUrl, title, compound, price}) {
-    const { onCartAdded } = useContext(AnywherePizzaContext);
+    const { onCartAdded, cartItems } = useContext(AnywherePizzaContext);
 
     function onCart() {
         onCartAdded({id, title, imgUrl, compound, price, counter: 1});
+    }
+
+    function getProductCounter() {
+        const product = cartItems.find(cartObj => cartObj.id === id);
+        if(product) {
+            return product.counter;
+        }
     }
     
     return (
@@ -17,7 +24,13 @@ function Card({id, imgUrl, title, compound, price}) {
                 <p className="card__setup">{compound}</p>
             </div>
             <div className='card__pick'>
-                <button className="btn" onClick={onCart}>Додати</button>
+                <button className={getProductCounter() ? 'btn btn--active' : 'btn'} onClick={onCart}>
+                    {
+                        getProductCounter() ? (
+                            <div>Додано - <span className='card__counter'>{getProductCounter()}</span></div>
+                        ) : 'Додати'
+                    }
+                </button>
                 <span className="card__price">{price} грн</span>
             </div>
         </div>

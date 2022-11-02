@@ -124,7 +124,6 @@ function App() {
 
     setForce(force + 1);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    console.log(obj); 
   }
 
   function onClickMinus(id) {
