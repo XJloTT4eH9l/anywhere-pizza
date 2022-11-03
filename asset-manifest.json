@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/anywhere-pizza/static/css/main.ca6263f3.css",
-    "main.js": "/anywhere-pizza/static/js/main.60e0f572.js",
+    "main.css": "/anywhere-pizza/static/css/main.455edc16.css",
+    "main.js": "/anywhere-pizza/static/js/main.e9072452.js",
     "static/media/slick.svg": "/anywhere-pizza/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/anywhere-pizza/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/anywhere-pizza/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/anywhere-pizza/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/anywhere-pizza/index.html",
-    "main.ca6263f3.css.map": "/anywhere-pizza/static/css/main.ca6263f3.css.map",
-    "main.60e0f572.js.map": "/anywhere-pizza/static/js/main.60e0f572.js.map"
+    "main.455edc16.css.map": "/anywhere-pizza/static/css/main.455edc16.css.map",
+    "main.e9072452.js.map": "/anywhere-pizza/static/js/main.e9072452.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca6263f3.css",
-    "static/js/main.60e0f572.js"
+    "static/css/main.455edc16.css",
+    "static/js/main.e9072452.js"
   ]
 }
