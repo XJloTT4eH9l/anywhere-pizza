@@ -6,7 +6,7 @@ import Notification from '../Notification/Notification';
 import { AnywherePizzaContext } from '../../context';
 
 function SideCart() {
-    const { isCartOpen, setIsCartOpen, cartItems, onCartAdded, getCartSummary, setNavLinkActive } = useContext(AnywherePizzaContext);
+    const { isCartOpen, setIsCartOpen, cartItems, setCartItems, onCartAdded, getCartSummary, setNavLinkActive } = useContext(AnywherePizzaContext);
 
     function onCartClose() {
         setIsCartOpen(false);
@@ -23,6 +23,9 @@ function SideCart() {
                         {
                             cartItems.length > 0 ? (
                                 <>
+                                <div className='side-cart__cart-clear'>
+                                    <button className='btn side-cart__btn-clear' onClick={() => setCartItems([])}>Очистити корзину</button>
+                                </div>
                                     <div className="side-cart__items"> 
                                         {
                                             cartItems.map(item => {

@@ -39,10 +39,15 @@ function OrderItem(props) {
             </div>
             <div className='orders-item__bottom'>
                 <p className='orders-item__text'>Адреса: {address}</p>
-                <div className='orders-item__imgs'>
-                    {products.map(item => {
-                        return <img key={item.id} className='orders-item__preview-img' src={item.imgUrl} alt={item.title} />
-                    })}
+                <div className='orders-item__preview'>
+                    <div className='orders-item__imgs'>
+                        {products
+                        .filter((item, index) => index < 5)
+                        .map((item) => {
+                            return <img key={item.id} className='orders-item__preview-img' src={item.imgUrl} alt={item.title} />
+                        })}
+                    </div>
+                    {products.length > 5 && <span className='orders-item__remainder'>Та ще {products.length - 5} товари</span>}
                 </div>
             </div>
             <div className={orderOpen ? 'orders-item__content orders-item__content--active' : 'orders-item__content'}>

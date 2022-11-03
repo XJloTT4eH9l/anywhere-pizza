@@ -55,6 +55,7 @@ function Form() {
         setEmail('');
         setStreet('');
         setHouse('');
+        window.scrollTo(0, 0)
     }
 
     function streetHandler(e) {

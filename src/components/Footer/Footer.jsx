@@ -25,7 +25,7 @@ function Footer() {
                     <ul className='footer__list'>
                         <h2 className='footer__title'>Контакти</h2>
                         <li className='footer__item'>
-                            <a className='footer__link footer__link--flex' href='tel:+380983657'>
+                            <a className='footer__link footer__link--flex' href='tel:+380983657689'>
                                 <img className='footer__img' src='img/tel.svg' alt='Телефон' />
                                 +380 98 3657 689
                             </a>

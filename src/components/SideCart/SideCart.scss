@@ -41,6 +41,9 @@
         justify-content: space-between;
         flex: 1 1 auto;
     }
+    &__items {
+        margin-top: 70px;
+    }
     &__top {
         margin-top: 32px;
         margin-bottom: 20px;
@@ -78,5 +81,14 @@
             color: $white-color;
             background-color: $primary-color;
         }
+    }
+    &__cart-clear {
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
     }
 }
