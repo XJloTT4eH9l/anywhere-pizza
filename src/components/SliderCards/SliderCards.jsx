@@ -66,11 +66,18 @@ function SliderCards({ products, title }) {
 }
 
 function SliderCard({id, imgUrl, title, compound, price}) {
-    const { onCartAdded } = useContext(AnywherePizzaContext);
+    const { onCartAdded, cartItems } = useContext(AnywherePizzaContext);
 
     function onCart() {
         onCartAdded({id, title, imgUrl, compound, price, counter: 1});
     }
+
+    function getProductCounter() {
+      const product = cartItems.find(cartObj => cartObj.id === id);
+      if(product) {
+          return product.counter;
+      }
+  }
 
     return (
         <div className="slider-card">
@@ -79,7 +86,13 @@ function SliderCard({id, imgUrl, title, compound, price}) {
             </div>
             <div className='slider-card__bottom'>
               <h3 className='slider-card__title'>{title}</h3>
-              <button className="btn slider-card__btn" onClick={onCart}>{price} грн</button>
+              <button className={getProductCounter() ? 'btn btn--active' : 'btn'} onClick={onCart}>
+                    {
+                        getProductCounter() ? (
+                            <div>Додано - <span className='card__counter'>{getProductCounter()}</span></div>
+                        ) : price + 'грн'
+                    }
+                </button>
             </div>
         </div>
     )

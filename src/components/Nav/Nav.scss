@@ -20,6 +20,9 @@
     }
     &__item:not(:last-child) {
         margin-right: 32px;
+        @media(max-width: 1170px) {
+            margin-right: 20px;
+        }
     }
     &__link {
         padding-bottom: 5px;

@@ -148,8 +148,14 @@ svg {
       background-color: $primary-color;
     }
   }
+  @media(max-width: 900px) {
+    padding: 10px 20px;
+  }
   @media(max-width: 420px) {
     padding: 10px 20px;
+  }
+  @media(max-width: 350px) {
+    padding: 10px 10px;
   }
   &--active {
     color: $white-color;

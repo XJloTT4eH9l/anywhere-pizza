@@ -8,7 +8,17 @@ import SliderCards from "../components/SliderCards/SliderCards";
 import Form from "../components/Form/Form";
 
 function CartPage() {
-    const {cartItems, onCartAdded, getCartSummary, sauces, snacks, orderDone, ordersId, setNavLinkActive} = useContext(AnywherePizzaContext);
+    const {
+        cartItems,
+        onCartAdded,
+        getCartSummary, 
+        sauces, 
+        snacks,
+        orders, 
+        orderDone, 
+        ordersId, 
+        setNavLinkActive
+        } = useContext(AnywherePizzaContext);
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -48,7 +58,9 @@ function CartPage() {
                     deskr={orderDone ? 'Дякуємо за замовлення! Приблизний час доставки 45 хвилин': 'Додайте хоча б один товар в корзину для того щоб зробити замовлення'}
                     imgSrc={orderDone ? 'img/order.png' :'img/empty-cart.webp'}
                 >
-                    { <Link to='/anywhere-pizza/orders' className='notification__btn' onClick={() => setNavLinkActive("orders")}>Замовлення</Link> } 
+                    { orders.length > 0 ?
+                     <Link to='/anywhere-pizza/orders' className='notification__btn' onClick={() => setNavLinkActive("orders")}>Замовлення</Link> :
+                     <Link to='/anywhere-pizza/' className='notification__btn' onClick={() => setNavLinkActive(null)}>На головну</Link> } 
                 </Notification>
             )
             }

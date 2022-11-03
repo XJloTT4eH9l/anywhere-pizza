@@ -21,8 +21,14 @@
         background-color: $primary-color;
         padding: 8px 16px;
         border-radius: 4px;
+        transition: transform 0.3s ease-in-out;
         & img {
             margin-right: 8px;
+        }
+        @media(min-width: 992px) {
+            &:hover {
+                transform: translateX(-10px);
+            }
         }
         @media(max-width: 350px) {
             font-size: 10px;

@@ -11,19 +11,20 @@
     transition: transform 0.3s ease-in-out;
     @media(max-width: 991px) {
         margin: 0 auto;
-        max-width: 350px;
     }
     @media(max-width: 770px) {
-        max-width: 500px;
+        width: 500px;
+        max-width: 70%;
     }
     @media(max-width: 550px) {
         max-width: 350px;
+        width: 350px;
     }
     @media(max-width: 420px) {
-        max-width: 300px;
+        width: 300px;
     }
     @media(max-width: 350px) {
-        max-width: 220px;
+        width: 220px;
     }
     
     &:hover {
@@ -37,9 +38,6 @@
         padding-bottom: 0;
         @media(max-width: 991px) {
             text-align: center;
-        }
-        @media(max-width: 550px) {
-            padding: 10px;
         }
         & img {
             margin-bottom: 16px;
@@ -66,10 +64,12 @@
         font-weight: 400;
         font-size: 14px;
         margin-bottom: 16px;
-        min-width: 300px;
         max-width: 300px;
+        @media(max-width: 770px) {
+            margin: 0 auto;
+            margin-bottom: 16px;
+        }
         @media(max-width: 420px) {
-            min-width: 200px;
             max-width: 200px;
             margin: 0 auto;
             margin-bottom: 16px;
@@ -79,6 +79,9 @@
         font-weight: 600;
         font-size: 18px;
         color: $primary-color;
+        @media(max-width: 350px) {
+            font-size: 14px;
+        }
     }
     &__pick {
         padding-left: 20px;
