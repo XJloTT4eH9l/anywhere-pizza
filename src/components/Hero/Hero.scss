@@ -11,6 +11,12 @@
         padding: 40px;
         min-height: 300px;
     }
+    @media(max-width: 360px) {
+        width: 70%;
+        margin: 0 auto;
+        padding: 20px;
+        min-height: 300px;
+    }
     &__text-block {
         margin-top: 50px;
         @media(max-width: 480px) {

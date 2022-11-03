@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import Hero from "../components/Hero/Hero";
 import Categories from "../components/Categories/Categories";
@@ -9,6 +9,10 @@ import { AnywherePizzaContext } from "../context";
 
 function Home() {
     const { pizza } = useContext(AnywherePizzaContext);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <section className="homepage">

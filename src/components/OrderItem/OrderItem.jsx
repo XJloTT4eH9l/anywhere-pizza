@@ -26,7 +26,7 @@ function OrderItem(props) {
                     </div>
                     <div className="orders-item__field">
                         <h2 className="orders-item__heading">Сумма замовлення</h2>
-                        <p className="orders-item__text">{summary} грн</p>
+                        <p className="orders-item__text orders-item__text--summ">{summary} грн</p>
                     </div>
                     <button className='orders-item__accordion-btn' onClick={openOrder}>
                         <img 

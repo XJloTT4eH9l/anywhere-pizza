@@ -148,6 +148,9 @@ svg {
       background-color: $primary-color;
     }
   }
+  @media(max-width: 420px) {
+    padding: 10px 20px;
+  }
   &--active {
     color: $white-color;
     background-color: $primary-color;
@@ -180,7 +183,9 @@ svg {
     grid-template-columns: repeat(2, 1fr);
   }
   @media(max-width: 770px) {
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 

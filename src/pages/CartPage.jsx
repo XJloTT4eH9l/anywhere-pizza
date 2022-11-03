@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AnywherePizzaContext } from "../context";
 
@@ -8,7 +8,11 @@ import SliderCards from "../components/SliderCards/SliderCards";
 import Form from "../components/Form/Form";
 
 function CartPage() {
-    const {cartItems, onCartAdded, getCartSummary, sauces, snacks, orderDone, ordersId} = useContext(AnywherePizzaContext);
+    const {cartItems, onCartAdded, getCartSummary, sauces, snacks, orderDone, ordersId, setNavLinkActive} = useContext(AnywherePizzaContext);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <section className="container-short">
@@ -44,7 +48,7 @@ function CartPage() {
                     deskr={orderDone ? 'Дякуємо за замовлення! Приблизний час доставки 45 хвилин': 'Додайте хоча б один товар в корзину для того щоб зробити замовлення'}
                     imgSrc={orderDone ? 'img/order.png' :'img/empty-cart.webp'}
                 >
-                    { <Link to='/anywhere-pizza/' className='notification__btn'>На головну</Link> } 
+                    { <Link to='/anywhere-pizza/orders' className='notification__btn' onClick={() => setNavLinkActive("orders")}>Замовлення</Link> } 
                 </Notification>
             )
             }

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AnywherePizzaContext } from "../context";
 
@@ -7,6 +7,10 @@ import Notification from "../components/Notification/Notification";
 
 function OrdersPage() {
     const { orders, setNavLinkActive } = useContext(AnywherePizzaContext);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     
     return (
         <section className="container-short">
@@ -36,7 +40,7 @@ function OrdersPage() {
                         deskr='Для того щоб зробити замовлення додайте товар в корзину'
                         imgSrc='img/empty-cart.webp' 
                     >   
-                        { <Link to='/anywhere-pizza/' className='notification__btn' onClick={() => setNavLinkActive(null)}>На головну</Link> } 
+                        { <Link to='/anywhere-pizza/orders' className='notification__btn' onClick={() => setNavLinkActive(null)}>На головну</Link> } 
                     </Notification>
                 )
             }

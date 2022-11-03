@@ -1,9 +1,14 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Catalog from "../components/Catalog/Catalog";
 import { AnywherePizzaContext } from "../context";
 
 function ComboPage() {
     const { combo, sortProducts } = useContext(AnywherePizzaContext);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
         <Catalog 
             title="Комбо" 
