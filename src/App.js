@@ -19,6 +19,7 @@ import OrdersPage from './pages/OrdersPage';
 import Header from './components/Header/Header';
 import SideCart from './components/SideCart/SideCart';
 import Footer from './components/Footer/Footer';
+import CartAdded from './components/CartAdded/CartAdded';
 
 function App() {
   //products
@@ -40,6 +41,7 @@ function App() {
   const [sortTitle, setSortTitle] = useState('title');
   const [navLinkActive, setNavLinkActive] = useState('');
   const [orderDone, setOrderDone] = useState(false);
+  const [addedToCart, setAddedToCart] = useState(false);
 
   const navLinks = [
     {name: 'Піца', href: '/anywhere-pizza/pizza', title: 'pizza', imgSrc:'img/pizza-icon.png'},
@@ -108,10 +110,15 @@ function App() {
         obj.counter += 1;
       }
 
+      setAddedToCart(true);
+      setTimeout(() => setAddedToCart(false), 1500);
+
       setForce(force + 1);
       localStorage.setItem('cartItems', JSON.stringify(cartItems));
     } else {
       setCartItems(prev => [...prev, item]);
+      setAddedToCart(true);
+      setTimeout(() => setAddedToCart(false), 1500);
     }
   }
 
@@ -188,13 +195,15 @@ function App() {
         setSortTitle,
         sortProducts,
         navLinkActive,
-        setNavLinkActive
+        setNavLinkActive,
+        addedToCart,
       } 
     }>
       <div className='app'>
         <Header />
         <SideCart />
         <main className='main'>
+          <CartAdded />
           <Routes>
             <Route path='/anywhere-pizza/' element={ <Home /> }></Route>
             <Route path='/anywhere-pizza/pizza' element={ <PizzaPage /> }></Route>

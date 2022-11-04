@@ -16,6 +16,23 @@ function OrderItem(props) {
         setIsCartOpen(true);
     }
 
+    function getRemainder() {
+        const remain = products.length - 5;
+        if(remain === 1) {
+            return 'Товар'
+        } else if(remain <= 4) {
+            return 'Товари' 
+        } else if(remain <= 20) {
+            return 'Товарів'
+        } else if(+String(remain).split(''[1] === 1)) {
+            return 'Товар'
+        } else if(+String(remain).split('')[1] <= 4) {
+            return 'Товари'
+        } else {
+            return 'Товарів'
+        }
+    }
+
     return (
         <div className="orders-item">
             <div className="orders-item__top">
@@ -47,7 +64,7 @@ function OrderItem(props) {
                             return <img key={item.id} className='orders-item__preview-img' src={item.imgUrl} alt={item.title} />
                         })}
                     </div>
-                    {products.length > 5 && <span className='orders-item__remainder'>Та ще {products.length - 5} товари</span>}
+                    {products.length > 5 && <span className='orders-item__remainder'>Та ще {products.length - 5} {getRemainder()}</span>}
                 </div>
             </div>
             <div className={orderOpen ? 'orders-item__content orders-item__content--active' : 'orders-item__content'}>

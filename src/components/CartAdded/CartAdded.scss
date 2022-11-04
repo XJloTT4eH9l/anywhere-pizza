@@ -1,0 +1,25 @@
+@import '../../variables.scss';
+
+.cart-added {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: $primary-color;
+    background-color: $primary-light-color;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10;
+    @media(max-width: 500px) {
+        font-size: 14px;
+    }
+    &--active {
+        opacity: 1;
+    }
+}
