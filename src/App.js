@@ -105,6 +105,7 @@ function App() {
     setOrderDone(false);
     if(cartItems.find(cartObj => cartObj.id === item.id)) {
       const obj = cartItems.find(cartObj => cartObj.id === item.id);
+      console.log(obj);
 
       if(obj) {
         obj.counter += 1;
@@ -112,7 +113,6 @@ function App() {
 
       setAddedToCart(true);
       setTimeout(() => setAddedToCart(false), 1500);
-
       setForce(force + 1);
       localStorage.setItem('cartItems', JSON.stringify(cartItems));
     } else {
@@ -162,6 +162,22 @@ function App() {
 
   }
 
+  function sortProductsPizza(array) {
+    const copy = array.slice();
+
+    switch(sortTitle) {
+      case 'title': 
+        return copy.sort((a, b) => a.title > b.title ? 1 : -1);
+      case 'price-low':
+        return copy.sort((a, b) => a.prices[0] > b.prices[0] ? 1 : -1);
+      case 'price-top':
+        return copy.sort((a, b) => b.prices[0] > a.prices[0] ? 1 : -1);
+      default: 
+        return array;
+    }
+
+  }
+
   return (
     <AnywherePizzaContext.Provider value={
       {
@@ -194,6 +210,7 @@ function App() {
         sortTitle,
         setSortTitle,
         sortProducts,
+        sortProductsPizza,
         navLinkActive,
         setNavLinkActive,
         addedToCart,

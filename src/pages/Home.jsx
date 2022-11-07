@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 
 import Hero from "../components/Hero/Hero";
 import Categories from "../components/Categories/Categories";
-import Card from "../components/Card/Card";
+import { PizzaCard } from "../components/Card/Card";
 import Mailing from "../components/Mailing/Mailing";
 
 import { AnywherePizzaContext } from "../context";
@@ -25,7 +25,7 @@ function Home() {
                         <div className="catalog">
                            {pizza.map(item => {
                                 return (
-                                    <Card 
+                                    <PizzaCard 
                                         key= {item.id}
                                         {...item} 
                                     />

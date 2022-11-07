@@ -74,7 +74,11 @@ function OrderItem(props) {
                             <div className='orders-item__content-product' key={item.id}>
                                 <div className='orders-item__content-left'>
                                     <img src={item.imgUrl} alt={item.title} />
-                                    <h3 className='orders-item__title'>{item.title}</h3>
+                                    <div className='orders-item__info'>
+                                        <h3 className='orders-item__title'>{item.title}</h3>
+                                        {item.activeSize && <p className='orders-item__size'>{item.activeSize} см</p>}
+                                        {item.type && <p className='orders-item__size'>{item.type}</p>}
+                                    </div>
                                 </div>
                                 <div className='orders-item__content-right'>
                                     <div className='orders-item__count'>{item.counter}</div>

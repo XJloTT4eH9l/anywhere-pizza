@@ -2,14 +2,18 @@ import './CartItem.scss';
 import { useContext } from 'react';
 import { AnywherePizzaContext} from '../../context';
 
-function CartItem({ id, imgSrc, title, price, counter }) {
+function CartItem({ id, imgSrc, title, price, counter, activeSize, type }) {
     const { onClickMinus, onClickPlus } = useContext(AnywherePizzaContext);
 
     return (
         <div className="cart-item">
             <div className='cart-item__info'>
                 <img className='cart-item__img' src={imgSrc} alt={title} />
-                <h2 className='cart-item__title'>{title}</h2>
+                <div className='cart-item__description'>
+                    <h2 className='cart-item__title'>{title}</h2>
+                    {activeSize && <p className='cart-item__size'>{activeSize} см</p>}
+                    {type && <p className='cart-item__size'>{type}</p>}
+                </div>
             </div>
             <div className='cart-item__summary'>
                 <div className='cart-item__counter'>

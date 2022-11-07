@@ -3,7 +3,7 @@ import Catalog from "../components/Catalog/Catalog";
 import { AnywherePizzaContext } from "../context";
 
 export default function PizzaPage() {
-    const { pizza, sortProducts } = useContext(AnywherePizzaContext);
+    const { pizza, sortProductsPizza } = useContext(AnywherePizzaContext);
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -13,7 +13,7 @@ export default function PizzaPage() {
         <Catalog 
             title="Піцца"
             data={pizza}
-            sortFunction={sortProducts}
+            sortFunction={sortProductsPizza}
         />
     )
 }

@@ -1,4 +1,4 @@
-import Card from "../Card/Card";
+import { Card, PizzaCard } from "../Card/Card";
 import Sorting from "../Sorting/Sorting";
 
 function Catalog({ title, data, sortFunction }) {
@@ -12,10 +12,7 @@ function Catalog({ title, data, sortFunction }) {
                 <div className="catalog">
                     {sortFunction(data).map(item => {
                         return (
-                            <Card 
-                                key= {item.id}
-                                {...item} 
-                            />
+                            title === 'Піцца' ? <PizzaCard key= {item.id} {...item} /> : <Card key= {item.id} {...item} />
                         )
                     })}
                 </div>

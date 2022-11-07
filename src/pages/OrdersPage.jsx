@@ -27,7 +27,7 @@ function OrdersPage() {
                                             id={order.id}
                                             address={order.address}
                                             summary={order.summary}
-                                            products={order.products} 
+                                            products={order.products}
                                         />
                                     )
                                 })

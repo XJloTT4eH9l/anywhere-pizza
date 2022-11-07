@@ -41,6 +41,8 @@ function CartPage() {
                                         price={item.price}
                                         onCartAdded={onCartAdded}
                                         counter={item.counter}
+                                        activeSize={item.activeSize}
+                                        type={item.type}
                                     />
                                 )
                             })
