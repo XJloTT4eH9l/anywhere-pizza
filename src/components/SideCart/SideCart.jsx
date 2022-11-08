@@ -31,7 +31,7 @@ function SideCart() {
                                             cartItems.map(item => {
                                                 return (
                                                     <SideCartItem
-                                                        key={item.id}
+                                                        key={item.activeSize ? item.id + item.activeSize + item.type : item.title + ' ' + item.id}
                                                         id={item.id}
                                                         title={item.title}
                                                         imgSrc={item.imgUrl}

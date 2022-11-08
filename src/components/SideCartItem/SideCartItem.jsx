@@ -13,9 +13,9 @@ function SideCartItem({ id, imgSrc, title, price, counter, activeSize, type }) {
                 {type && <p className='side-cart-item__info'>{type}</p>}
                 <div className="side-cart-item__bottom">
                     <div className="side-cart-item__quanity">
-                        <button className="side-cart-item__btn" onClick={() => onClickMinus(id)} >-</button>
+                        <button className="side-cart-item__btn" onClick={() => onClickMinus({ id, imgSrc, title, price, counter, activeSize, type })} >-</button>
                         <h4 className="side-cart-item__amount">{counter}</h4>
-                        <button className="side-cart-item__btn" onClick={() => onClickPlus(id)} >+</button>
+                        <button className="side-cart-item__btn" onClick={() => onClickPlus({ id, imgSrc, title, price, counter, activeSize, type })} >+</button>
                     </div>
                     <span className="side-cart-item__price">{price * counter} грн</span>
                 </div>

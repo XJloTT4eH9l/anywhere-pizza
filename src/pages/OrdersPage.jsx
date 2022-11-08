@@ -23,7 +23,7 @@ function OrdersPage() {
                                 orders.map(order =>{
                                     return (
                                         <OrderItem 
-                                            key={order.id}
+                                            key={order.id + ' ' + order.summary}
                                             id={order.id}
                                             address={order.address}
                                             summary={order.summary}

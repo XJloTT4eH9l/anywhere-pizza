@@ -103,16 +103,12 @@ function App() {
 
   function onCartAdded(item) {
     setOrderDone(false);
-    if(cartItems.find(cartObj => cartObj.id === item.id)) {
-      const obj = cartItems.find(cartObj => cartObj.id === item.id);
-      console.log(obj);
+    setAddedToCart(true);
+    setTimeout(() => setAddedToCart(false), 1500);
+    const obj = cartItems.find(cartObj => cartObj.id === item.id);
 
-      if(obj) {
-        obj.counter += 1;
-      }
-
-      setAddedToCart(true);
-      setTimeout(() => setAddedToCart(false), 1500);
+    if(obj) {
+      obj.counter += 1;
       setForce(force + 1);
       localStorage.setItem('cartItems', JSON.stringify(cartItems));
     } else {
@@ -122,24 +118,53 @@ function App() {
     }
   }
 
-  function onClickPlus(id) {
-    const obj = cartItems.find(item => item.id === id);
+  function onCartAddedPizza(item) {
+    setOrderDone(false);
+    setAddedToCart(true);
+    setTimeout(() => setAddedToCart(false), 1500);
+    const obj = cartItems.find(cartObj => cartObj.id === item.id && cartObj.activeSize === item.activeSize && cartObj.type === item.type);
 
     if(obj) {
       obj.counter += 1;
+      setForce(force + 1);
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    } else {
+      setCartItems(prev => [...prev, item]);
+      setAddedToCart(true);
+      setTimeout(() => setAddedToCart(false), 1500);
+    }
+  }
+
+  function onClickPlus(item) {
+    const objPizza = cartItems.find(cartObj => item.activeSize !== undefined && cartObj.id === item.id && cartObj.activeSize === item.activeSize && cartObj.type === item.type);
+    const obj = cartItems.find(cartItem => cartItem.id === item.id);
+
+    if(objPizza) {
+      objPizza.counter += 1;
+    } else {
+      if(obj) {
+        obj.counter += 1;
+      }
     }
 
     setForce(force + 1);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }
 
-  function onClickMinus(id) {
-    const obj = cartItems.find(item => item.id === id);
+  function onClickMinus(item) {
+    const objPizza = cartItems.find(cartObj => item.activeSize !== undefined && cartObj.id === item.id && cartObj.activeSize === item.activeSize && cartObj.type === item.type);
+    const obj = cartItems.find(cartObj => cartObj.id === item.id);
 
-    if(obj) {
-      obj.counter > 1 ?
-      obj.counter -= 1 :
-      setCartItems(prev => prev.filter(item => item.id !== id));
+    if(objPizza) {
+      objPizza.counter > 1 ? 
+        objPizza.counter -= 1 : 
+          setCartItems(prev => prev.filter(pizza => pizza.activeSize + pizza.id + pizza.type !== item.activeSize + item.id + item.type));
+    } else {
+      if(obj) {
+        obj.counter > 1 ?
+          obj.counter -= 1 :
+            setCartItems(prev => prev.filter(cartObj => cartObj.title !== item.title));
+      }
     }
 
     setForce(force + 1);
@@ -201,6 +226,7 @@ function App() {
         cartItems,
         setCartItems,
         onCartAdded,
+        onCartAddedPizza,
         onClickPlus,
         onClickMinus,
         getCartSummary,

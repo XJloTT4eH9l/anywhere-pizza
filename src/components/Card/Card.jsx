@@ -38,20 +38,20 @@ function Card({id, imgUrl, title, compound, price}) {
 }
 
 function PizzaCard({id, imgUrl, title, compound, prices, sizes}) {
-    const { onCartAdded, cartItems } = useContext(AnywherePizzaContext);
+    const { onCartAddedPizza, cartItems } = useContext(AnywherePizzaContext);
     const doughtypes = ['Традиційне', 'Тонке'];
     const [type, setType] = useState(doughtypes[0]);
     const [activeSize, setActiveSize] = useState(sizes[0]);
     const [price, setPrice] = useState(prices[0]);
 
     function onCart() {
-        onCartAdded({id, title, imgUrl, compound, price, counter: 1, activeSize, type});
+        onCartAddedPizza({id, title, imgUrl, compound, price, counter: 1, activeSize, type});
     }
 
     function getProductCounter() {
-        const product = cartItems.find(cartObj => cartObj.id === id);
-        if(product) {
-            return product.counter;
+        const productsInCart = cartItems.filter(product => product.id === id);
+        if(productsInCart) {
+            return productsInCart.length
         }
     }
 
