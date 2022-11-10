@@ -49,9 +49,13 @@ function PizzaCard({id, imgUrl, title, compound, prices, sizes}) {
     }
 
     function getProductCounter() {
-        const productsInCart = cartItems.filter(product => product.id === id);
+        const initialValue = 0;
+        const productsInCart = cartItems
+            .filter(product => product.id === id)
+            .reduce((summ, nextProduct) => summ + nextProduct.counter, initialValue);
+            
         if(productsInCart) {
-            return productsInCart.length
+            return productsInCart;
         }
     }
 

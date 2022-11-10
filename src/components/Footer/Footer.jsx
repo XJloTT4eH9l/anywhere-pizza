@@ -11,7 +11,7 @@ function Footer() {
                     <ul className='footer__list'>
                         <h2 className='footer__title'>Інформація</h2>
                         <li className='footer__item'><Link to='/anywhere-pizza/' className='footer__link'>Головна</Link></li>
-                        <li className='footer__item'><Link to='/anywhere-pizza/' className='footer__link'>Про нас</Link></li>
+                        <li className='footer__item'><Link to='/anywhere-pizza/about' className='footer__link'>Про нас</Link></li>
                         <li className='footer__item'><Link to='/anywhere-pizza/' className='footer__link'>Контакти</Link></li>
                     </ul>
                     <ul className='footer__list'>

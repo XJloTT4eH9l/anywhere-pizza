@@ -14,6 +14,7 @@ import DessertsPage from './pages/DessertsPage';
 import ComboPage from './pages/ComboPage';
 import CartPage from './pages/CartPage';
 import OrdersPage from './pages/OrdersPage';
+import AboutPage from './pages/AboutPage';
 
 //components
 import Header from './components/Header/Header';
@@ -256,8 +257,9 @@ function App() {
             <Route path='/anywhere-pizza/sauces' element={ <SaucesPage /> }></Route>
             <Route path='/anywhere-pizza/desserts' element={ <DessertsPage /> }></Route>
             <Route path='/anywhere-pizza/combo' element={ <ComboPage /> }></Route>
-            <Route path='/anywhere-pizza/cart' element={ <CartPage /> }></Route>
-            <Route path='/anywhere-pizza/orders' element={ <OrdersPage />}></Route>
+            <Route path='/anywhere-pizza/cart' element={ <CartPage /> } ></Route>
+            <Route path='/anywhere-pizza/orders' element={ <OrdersPage /> }></Route>
+            <Route path='/anywhere-pizza/about' element={ <AboutPage /> }></Route>
           </Routes>
         </main>
         <Footer />
