@@ -1,0 +1,174 @@
+@import '../../variables.scss';
+
+.pizzaPlaceholder {
+    max-width: 350px;
+    border: 1px solid $gray-line-color;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: $white-color;
+    @media(max-width: 991px) {
+        margin: 0 auto;
+    }
+    @media(max-width: 770px) {
+        width: 500px;
+        max-width: 70%;
+    }
+    @media(max-width: 550px) {
+        max-width: 350px;
+        width: 350px;
+    }
+    @media(max-width: 420px) {
+        width: 300px;
+    }
+    @media(max-width: 350px) {
+        width: 220px;
+    }
+    @keyframes loading {
+        0% {
+            background-color:$gray-text-color;
+        }
+        50% {
+            background-color: rgba($gray-text-color, 0.5);
+        }
+        100% {
+            background-color:$gray-text-color;
+        }
+    } 
+    &__round {
+        width: 256px;
+        height: 256px;
+        margin: 0 auto;
+        border-radius: 50%;
+        background-color: $gray-text-color;
+        margin-bottom: 16px;
+        transition: background-color 0.3s linear;
+        animation: loading 2s infinite linear;
+        @media(max-width: 450px) {
+            width: 238px;
+            height: 238px;
+        }
+    }
+    &__title {
+        width: 100%;
+        height: 22px;
+        margin-bottom: 12px;
+        background-color: $gray-text-color;
+        transition: background-color 0.3s linear;
+        animation: loading 2s infinite linear;
+    }
+    &__compound {
+        margin-bottom: 16px;
+        span {
+            display: block;
+            width: 100%;
+            height: 10px;
+            background-color: $gray-text-color;
+            transition: background-color 0.3s linear;
+            animation: loading 2s infinite linear;
+            &:not(:last-child) {
+                margin-bottom: 2px;
+            }
+        }
+    }
+    &__types {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        span {
+            display: block;
+            width: 45%;
+            height: 38px;
+            border-radius: 6px;
+            background-color: $gray-text-color;
+            transition: background-color 0.3s linear;
+            animation: loading 2s infinite linear;
+        }
+    }
+    &__sizes {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        span {
+            width: 70px;
+            height: 30px;
+            border-radius: 6px;
+            background-color: $gray-text-color;
+            transition: background-color 0.3s linear;
+            animation: loading 2s infinite linear;
+        }
+    }
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span {
+            width: 70px;
+            height: 22px;
+            background-color: $gray-text-color;
+            transition: background-color 0.3s linear;
+            animation: loading 2s infinite linear;
+        }
+    }
+    &__btn {
+        width: 117px;
+        height: 45px;
+        background-color: $gray-text-color;
+        border-radius: 6px;
+        transition: background-color 0.3s linear;
+        animation: loading 2s infinite linear;
+    }
+}
+
+.cardPlaceholder {
+    max-width: 350px;
+    border: 1px solid $gray-line-color;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: $white-color;
+    @media(max-width: 991px) {
+        margin: 0 auto;
+    }
+    @media(max-width: 770px) {
+        width: 500px;
+        max-width: 70%;
+    }
+    @media(max-width: 550px) {
+        max-width: 350px;
+        width: 350px;
+    }
+    @media(max-width: 420px) {
+        width: 300px;
+    }
+    @media(max-width: 350px) {
+        width: 220px;
+    }
+    @keyframes loading {
+        0% {
+            background-color:$gray-text-color;
+        }
+        50% {
+            background-color: rgba($gray-text-color, 0.5);
+        }
+        100% {
+            background-color:$gray-text-color;
+        }
+    } 
+    &__img {
+        width: 258px;
+        height: 258px;
+        margin: 0 auto;
+        margin-bottom: 12px;
+        border-radius: 6px;
+        transition: background-color 0.3s linear;
+        animation: loading 2s infinite linear;
+    }
+    &__compound {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 16px;
+        transition: background-color 0.3s linear;
+        animation: loading 2s infinite linear;
+    }
+}

@@ -3,12 +3,13 @@ import { useContext, useEffect } from "react";
 import Hero from "../components/Hero/Hero";
 import Categories from "../components/Categories/Categories";
 import { PizzaCard } from "../components/Card/Card";
+import { PizzaPlaceholder } from "../components/CardPlaceholder/CardPlaceholder";
 import Mailing from "../components/Mailing/Mailing";
 
 import { AnywherePizzaContext } from "../context";
 
 function Home() {
-    const { pizza } = useContext(AnywherePizzaContext);
+    const { pizza, isloading } = useContext(AnywherePizzaContext);
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -23,14 +24,20 @@ function Home() {
                     <>
                         <h2 className="title">Піца</h2>
                         <div className="catalog">
-                           {pizza.map(item => {
-                                return (
-                                    <PizzaCard 
-                                        key= {item.id}
-                                        {...item} 
-                                    />
+                            {
+                                isloading ? (
+                                    [...new Array(10)].map((_, index) => <PizzaPlaceholder key={index}/>)
+                                ) : (
+                                    pizza.map(item => {
+                                        return (
+                                            <PizzaCard 
+                                                key= {item.id}
+                                                {...item} 
+                                            />
+                                        )
+                                    })
                                 )
-                           })}
+                            }
                         </div>
                     </>
                     <Mailing />

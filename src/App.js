@@ -43,6 +43,7 @@ function App() {
   const [navLinkActive, setNavLinkActive] = useState('');
   const [orderDone, setOrderDone] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
+  const [isloading, setIsLoading] = useState(true);
 
   const navLinks = [
     {name: 'Піца', href: '/anywhere-pizza/pizza', title: 'pizza', imgSrc:'img/pizza-icon.png'},
@@ -58,6 +59,7 @@ function App() {
   //setProducts
   useEffect(() => {
     async function getProducts() {
+      setIsLoading(true);
       const productsResponce = await axios.get('https://631ae489dc236c0b1ee6bc11.mockapi.io/products');
       const pizzaResp = productsResponce.data[0].pizza;
       const sushiResp = productsResponce.data[1].sushi;
@@ -74,6 +76,7 @@ function App() {
       setSauces(saucesResp);
       setDesserts(dessertsResp);
       setCombo(comboResp);
+      setIsLoading(false);
     }
     getProducts();
 
@@ -215,6 +218,7 @@ function App() {
         desserts,
         combo,
         orders,
+        isloading,
         setOrders,
         ordersId, 
         setOrdersId,
