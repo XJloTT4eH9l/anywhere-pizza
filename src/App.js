@@ -21,6 +21,7 @@ import Header from './components/Header/Header';
 import SideCart from './components/SideCart/SideCart';
 import Footer from './components/Footer/Footer';
 import CartAdded from './components/CartAdded/CartAdded';
+import ScrollTop from './components/ScrollTop/ScrollTop';
 
 function App() {
   //products
@@ -252,6 +253,7 @@ function App() {
         <SideCart />
         <main className='main'>
           <CartAdded />
+          <ScrollTop />
           <Routes>
             <Route path='/anywhere-pizza/' element={ <Home /> }></Route>
             <Route path='/anywhere-pizza/pizza' element={ <PizzaPage /> }></Route>

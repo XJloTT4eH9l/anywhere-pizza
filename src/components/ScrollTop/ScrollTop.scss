@@ -1,0 +1,43 @@
+@import '../../variables.scss';
+
+.scroll-top {
+    position: fixed;
+    bottom: 150px;
+    right: -100%;
+    transition: all 1s ease-in-out;
+    z-index: 8;
+    opacity: 0;
+    &--active {
+        opacity: 1;
+        right: 3%;
+        @media(max-width: 2000px) {
+            right: 10%;
+        }
+        @media(max-width: 1700px) {
+            right: 5%;
+        }
+        @media(max-width: 991px) {
+            right: 50%;
+            bottom: 100px;
+            transform: translateX(50%);
+        }
+        @media(max-width: 770px) {
+            right: 8%;
+        }
+        @media(max-width: 500px) {
+            right: 22px;
+        }
+    }
+
+    &__arrow-top {
+        width: 30px;
+        height: 30px;
+        fill: $primary-color;
+        transition: transform 0.3s ease-in-out;
+        @media(min-width: 992px) {
+            &:hover {
+                transform: translateY(-5px);
+            }
+        }
+    }
+}
