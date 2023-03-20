@@ -1,17 +1,22 @@
-Anywhere-pizza - pizza delivery website
+# Anywhere Pizza
 
-Stack:
+Web application for order pizzas
+## Links
 
-ReactJS + react-hooks
+- Project [Anywhere-pizza](https://xjlott4eh9l.github.io/anywhere-pizza/)
+- Repository [Repository](https://github.com/XJloTT4eH9l/anywhere-pizza)
 
-React Router
+## Tech stack
+- React
+- JavaScript
+- React router dom
+- React context
+- Sass(SCSS)
+- REST API
 
-React Context
 
-Axios
-
-HTML
-
-CSS
-
-SCSS
+## Page speed insight
+- Computer page speed
+![Computer](/src/pageSpeed/mobile-speed.png "Computer page speed")
+- Mobile page speed
+![Mobile](/src/pageSpeed/computer-speed.png "Mobile page speed")
