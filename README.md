@@ -17,6 +17,6 @@ Web application for order pizzas
 
 ## Page speed insight
 - Computer page speed
-![Computer](/src/pageSpeed/mobile-speed.png "Computer page speed")
+![Computer](/src/pageSpeed/computer-speed.png "Computer page speed")
 - Mobile page speed
-![Mobile](/src/pageSpeed/computer-speed.png "Mobile page speed")
+![Mobile](/src/pageSpeed/mobile-speed.png "Mobile page speed")
